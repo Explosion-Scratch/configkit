@@ -1,13 +1,13 @@
 <h1 align="center">ConfigKit</h1>
 
 <p align="center">
-  <a href="https://explosion-scratch.github.io/ConfigKit">
+  <a href="https://explosion-scratch.github.io/configkit">
     <img src="./src/assets/icon.png" width="128" height="128" alt="ConfigKit logo">
   </a>
 </p>
 
 <p align=center>
-    <a href="https://explosion-scratch.github.io/ConfigKit">
+    <a href="https://explosion-scratch.github.io/configkit">
       <i>Use online</i>
     </a>
 </p>
@@ -25,7 +25,7 @@
 
 ## Getting Started
 
-Go to https://explosion-scratch.github.io/ConfigKit to start using ConfigKit directly in your browser.
+Go to https://explosion-scratch.github.io/configkit to start using ConfigKit directly in your browser.
 
 ## Running Locally
 
