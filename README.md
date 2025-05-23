@@ -1,4 +1,4 @@
-# ConfigKit
+<h1 align="center">ConfigKit</h1>
 
 <p align="center">
   <a href="https://explosion-scratch.github.io/ConfigKit">
@@ -6,7 +6,13 @@
   </a>
 </p>
 
-ConfigKit is an elegant macOS defaults configuration generator with sensible defaults. Navigate all the complex shell scripts much more easily!
+<p align=center>
+    <a href="https://explosion-scratch.github.io/ConfigKit">
+      <i>Use online</i>
+    </a>
+</p>
+
+<p align="center"><i>ConfigKit is an elegant macOS defaults configuration generator with sensible defaults. Navigate all the complex shell scripts much more easily!</i></p>
 
 ## Features
 
@@ -18,9 +24,11 @@ ConfigKit is an elegant macOS defaults configuration generator with sensible def
 - 🎯 Suggested default values
 
 ## Getting Started
+
 Go to https://explosion-scratch.github.io/ConfigKit to start using ConfigKit directly in your browser.
 
 ## Running Locally
+
 ### Prerequisites
 
 - Node.js 16+
