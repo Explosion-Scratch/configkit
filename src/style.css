@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+    --color-sidebar-bg: #e3e4e5cc;
+    /* Custom Colors */
+    --color-page-bg: #f0f2f2; /* #f5f5f7 in RGB */
+    --color-text-primary: #1d1d1f; /* #1d1d1f in RGB */
+    --color-button-text-default: #3d3d3d; /* #3d3d3d in RGB */
+
+    /* Accent Blue Palette */
+    --color-accent-300: #4b91f7; /* #4b91f7 - Gradient start */
+    --color-accent-400: #0077ed; /* #0077ed - Hover */
+    --color-accent-450: #367af6; /* #367af6 - Gradient end */
+    --color-accent-500: #0071e3; /* #0071e3 - Base */
+    --color-accent-600: #0066cc; /* #0066cc - Active */
+    --color-accent-700: #005bb5; /* #005bb5 - Checkbox hover */
+    --color-accent-focus: #3a6cd9; /* #3a6cd9 - Focus ring shadow source */
+
+    /* Note: Standard Tailwind colors (gray, red, yellow, blue, black, white) are typically available
+       without explicit definition here, unless you are overriding the entire palette.
+       The example OKLCH grays were omitted as they didn't correspond to hardcoded hex values used. */
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+.macos-scrollbar::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+.macos-scrollbar::-webkit-scrollbar-thumb {
+    /* Keep rgba, or use black/opacity utility if applicable */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+.macos-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* Keep rgba, or use black/opacity utility if applicable */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.macos-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.macos-scrollbar {
+    /* Keep rgba, or use black/opacity utility if applicable */
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+    scrollbar-width: thin;
+}
+
+/* macos-radio already uses 'white' via fill='white' in data:image/svg+xml */
+
+/* macos-checkbox already uses 'white' via fill='white' in data:image/svg+xml */
+.macos-checkbox:checked {
+    /* Replace hex with var */
+    background-color: rgb(var(--color-accent-500));
+    border-color: rgb(var(--color-accent-500));
+}
+.macos-checkbox:checked:hover {
+    /* Replace hex with var */
+    background-color: rgb(var(--color-accent-700));
+}
+
+/* macos-radio checked style using data:image/svg+xml already uses 'white' */
+.macos-radio:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
