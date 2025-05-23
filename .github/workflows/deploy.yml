@@ -2,8 +2,8 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main # or your default branch
-  workflow_dispatch: # Allows manual trigger
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -26,6 +26,7 @@ jobs:
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # The folder the action should deploy
-          branch: gh-pages # The branch the action should deploy to
-          clean: true # Automatically remove deleted files from the deployment
+          folder: dist
+          branch: gh-pages
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
