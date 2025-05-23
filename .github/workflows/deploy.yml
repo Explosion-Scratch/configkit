@@ -1,12 +1,10 @@
 name: Build and Deploy
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
+on: [push]
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -17,16 +15,12 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Install Dependencies 📦
-        run: bun install
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          bun install
+          bun run build
 
-      - name: Build 🔨
-        run: bun run build
-
-      - name: Deploy to GitHub Pages 🚀
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          branch: gh-pages
-          clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}
