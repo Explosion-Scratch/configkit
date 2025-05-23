@@ -1,0 +1,387 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>macOS Config Generator</title>
+        <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <style>
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-text-size-adjust: 100%;
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            }
+            .macos-scrollbar::-webkit-scrollbar {
+                width: 14px;
+                height: 14px;
+            }
+            .macos-scrollbar::-webkit-scrollbar-thumb {
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                border: 3px solid transparent;
+                background-clip: content-box;
+            }
+            .macos-scrollbar::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            .macos-scrollbar::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+            .macos-scrollbar {
+                scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+                scrollbar-width: thin;
+            }
+            .macos-radio:checked {
+                background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+            }
+        </style>
+    </head>
+    <body
+        class="macos-scrollbar"
+        style="
+            font-family:
+                &quot;Inter&quot;, &quot;Public Sans&quot;,
+                &quot;Noto Sans&quot;, sans-serif;
+        "
+    >
+        <div
+            class="relative flex size-full min-h-screen flex-col bg-[#f5f5f7] text-[#1d1d1f] group/design-root overflow-x-hidden"
+            style="
+                --checkbox-tick-svg: url(&quot;data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(248,250,252)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e&quot;);
+            "
+        >
+            <div class="layout-container flex h-full grow flex-col">
+                <main class="flex-1 flex">
+                    <div
+                        class="w-64 bg-gray-100 border-r border-gray-300/70 p-4 space-y-4 macos-scrollbar overflow-y-auto"
+                    >
+                        <div class="relative">
+                            <input
+                                class="w-full pl-8 pr-3 py-1.5 text-xs rounded-md outline-none shadow-sm transition-colors bg-white border border-gray-300 hover:border-gray-400 focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3]/50"
+                                placeholder="Search options..."
+                                type="search"
+                            />
+                            <div
+                                class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"
+                            >
+                                <svg
+                                    aria-hidden="true"
+                                    class="h-3.5 w-3.5 text-gray-400"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        clip-rule="evenodd"
+                                        d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                                        fill-rule="evenodd"
+                                    ></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <nav class="space-y-2">
+                            <a
+                                class="group block px-2.5 py-1.5 text-xs font-medium text-gray-700 rounded-md transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#0071e3]/50 active:bg-gray-300 data-[active=true]:bg-gray-200 hover:bg-gray-200"
+                                href="#"
+                            >
+                                <span class="group-hover:text-gray-900"
+                                    >General</span
+                                >
+                            </a>
+                            <a
+                                class="block px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200 rounded-md transition-colors bg-gray-200 text-[#0071e3]"
+                                href="#"
+                                >Appearance</a
+                            >
+                            <a
+                                class="block px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200 rounded-md transition-colors"
+                                href="#"
+                                >Finder</a
+                            >
+                            <a
+                                class="block px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200 rounded-md transition-colors"
+                                href="#"
+                                >Dock</a
+                            >
+                            <a
+                                class="block px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200 rounded-md transition-colors"
+                                href="#"
+                                >Mission Control</a
+                            >
+                            <a
+                                class="block px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200 rounded-md transition-colors"
+                                href="#"
+                                >Security</a
+                            >
+                            <a
+                                class="block px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200 rounded-md transition-colors"
+                                href="#"
+                                >Developer Tools</a
+                            >
+                            <a
+                                class="block px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-200 rounded-md transition-colors"
+                                href="#"
+                                >Advanced</a
+                            >
+                        </nav>
+                    </div>
+                    <div class="flex-1 p-6 macos-scrollbar overflow-y-auto">
+                        <div class="max-w-2xl mx-auto space-y-6">
+                            <div class="flex flex-col gap-1">
+                                <h1
+                                    class="text-2xl font-semibold text-[#1d1d1f]"
+                                >
+                                    Appearance Settings
+                                </h1>
+                                <p class="text-xs text-gray-500">
+                                    Customize the look and feel of your macOS
+                                    interface.
+                                </p>
+                            </div>
+                            <div class="space-y-5">
+                                <section
+                                    class="bg-white rounded-lg shadow-sm border border-gray-200/80"
+                                >
+                                    <div class="p-4 space-y-3">
+                                        <label
+                                            class="flex items-center gap-x-2 py-1 cursor-pointer group"
+                                        >
+                                            <input
+                                                checked=""
+                                                class="macos-radio h-3.5 w-3.5 border-gray-400 text-[#0071e3] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                name="accent-color"
+                                                type="radio"
+                                            />
+                                            <span
+                                                class="text-xs font-medium text-gray-700 group-hover:text-gray-900"
+                                                >Use system accent color
+                                                (Default)</span
+                                            >
+                                        </label>
+                                        <label
+                                            class="flex items-center gap-x-2 py-1 cursor-pointer group"
+                                        >
+                                            <input
+                                                class="macos-radio h-3.5 w-3.5 border-gray-400 text-[#0071e3] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                name="accent-color"
+                                                type="radio"
+                                            />
+                                            <span
+                                                class="text-xs font-medium text-gray-700 group-hover:text-gray-900"
+                                                >Graphite</span
+                                            >
+                                        </label>
+                                        <div
+                                            class="pl-5 space-y-2 text-xs text-gray-600"
+                                        >
+                                            <p>
+                                                Reduces the vibrancy of UI
+                                                elements for a more subdued
+                                                look.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section
+                                    class="bg-white rounded-lg shadow-sm border border-gray-200/80"
+                                >
+                                    <div class="p-4 space-y-3">
+                                        <label
+                                            class="flex items-center gap-x-2 py-1 cursor-pointer group"
+                                        >
+                                            <input
+                                                checked=""
+                                                class="h-3.5 w-3.5 rounded border-gray-400 bg-transparent text-[#0071e3] checked:bg-[#0071e3] checked:border-[#0071e3] checked:bg-[image:--checkbox-tick-svg] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                type="checkbox"
+                                            />
+                                            <span
+                                                class="text-xs font-medium text-gray-700 group-hover:text-gray-900"
+                                                >Enable transparency
+                                                effects</span
+                                            >
+                                        </label>
+                                        <div class="pl-[22px] space-y-1.5">
+                                            <p class="text-xs text-gray-500">
+                                                Adds depth with translucent
+                                                sidebars and windows.
+                                            </p>
+                                            <div
+                                                class="flex items-center gap-1.5 p-2 text-xs text-blue-700 bg-blue-50 border border-blue-200 rounded-md"
+                                            >
+                                                <svg
+                                                    class="h-3.5 w-3.5 flex-shrink-0"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        clip-rule="evenodd"
+                                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                                                        fill-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                                <span
+                                                    >Note: Disabling may improve
+                                                    performance on older
+                                                    Macs.</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section
+                                    class="bg-white rounded-lg shadow-sm border border-gray-200/80"
+                                >
+                                    <div class="p-4 space-y-3">
+                                        <label
+                                            class="flex items-center gap-x-2 py-1 cursor-pointer group"
+                                        >
+                                            <input
+                                                class="h-3.5 w-3.5 rounded border-gray-400 bg-transparent text-[#0071e3] checked:bg-[#0071e3] checked:border-[#0071e3] checked:bg-[image:--checkbox-tick-svg] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                type="checkbox"
+                                            />
+                                            <span
+                                                class="text-xs font-medium text-gray-700 group-hover:text-gray-900"
+                                                >Increase contrast</span
+                                            >
+                                        </label>
+                                        <div class="pl-[22px] space-y-1.5">
+                                            <p class="text-xs text-gray-500">
+                                                Improves legibility by making UI
+                                                elements more distinct.
+                                            </p>
+                                            <div
+                                                class="flex items-center gap-1.5 p-2 text-xs text-yellow-700 bg-yellow-50 border border-yellow-200 rounded-md"
+                                            >
+                                                <svg
+                                                    class="h-3.5 w-3.5 flex-shrink-0"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        clip-rule="evenodd"
+                                                        d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                                                        fill-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                                <span
+                                                    >Warning: Significantly
+                                                    alters the visual
+                                                    appearance.</span
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section
+                                    class="bg-white rounded-lg shadow-sm border border-gray-200/80"
+                                >
+                                    <div class="p-4 space-y-3">
+                                        <label
+                                            class="flex items-center gap-x-2 py-1 cursor-pointer group"
+                                        >
+                                            <input
+                                                class="h-3.5 w-3.5 rounded border-gray-400 bg-transparent text-[#0071e3] checked:bg-[#0071e3] checked:border-[#0071e3] checked:bg-[image:--checkbox-tick-svg] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                type="checkbox"
+                                            />
+                                            <span
+                                                class="text-xs font-medium text-gray-700 group-hover:text-gray-900"
+                                                >Always show scroll bars</span
+                                            >
+                                            <div
+                                                class="ml-auto flex items-center gap-1.5 text-xs text-red-600"
+                                            >
+                                                <svg
+                                                    class="h-3 w-3"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M10 3.75a.75.75 0 01.75.75v3.44l1.42-1.42a.75.75 0 111.06 1.06l-2.5 2.5a.75.75 0 01-1.06 0l-2.5-2.5a.75.75 0 011.06-1.06l1.42 1.42V4.5a.75.75 0 01.75-.75zm0 12.5a.75.75 0 00-.75-.75H4.57a.75.75 0 00-.53 1.28l2.5 2.5a.75.75 0 001.06 0l2.5-2.5A.75.75 0 0010 16.25zM12.5 10a.75.75 0 000 1.5h3.44l-1.42 1.42a.75.75 0 101.06 1.06l2.5-2.5a.75.75 0 000-1.06l-2.5-2.5a.75.75 0 10-1.06 1.06l1.42 1.42H12.5zm-5 0a.75.75 0 000-1.5H4.06l1.42-1.42a.75.75 0 10-1.06-1.06l-2.5 2.5a.75.75 0 000 1.06l2.5 2.5a.75.75 0 101.06-1.06L4.06 10.75H7.5z"
+                                                    ></path>
+                                                </svg>
+                                                <span>Restart Required</span>
+                                            </div>
+                                        </label>
+                                        <div class="pl-[22px] space-y-1.5">
+                                            <p class="text-xs text-gray-500">
+                                                Choose when scroll bars are
+                                                visible: "Automatically based on
+                                                mouse or trackpad", "When
+                                                scrolling", or "Always".
+                                            </p>
+                                            <div class="pl-1 space-y-1.5">
+                                                <label
+                                                    class="flex items-center gap-x-2 py-0.5 cursor-pointer group"
+                                                >
+                                                    <input
+                                                        checked=""
+                                                        class="macos-radio h-3.5 w-3.5 border-gray-400 text-[#0071e3] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                        name="scrollbar-visibility"
+                                                        type="radio"
+                                                    />
+                                                    <span
+                                                        class="text-xs font-medium text-gray-600 group-hover:text-gray-800"
+                                                        >Automatically based on
+                                                        mouse or trackpad</span
+                                                    >
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-x-2 py-0.5 cursor-pointer group"
+                                                >
+                                                    <input
+                                                        class="macos-radio h-3.5 w-3.5 border-gray-400 text-[#0071e3] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                        name="scrollbar-visibility"
+                                                        type="radio"
+                                                    />
+                                                    <span
+                                                        class="text-xs font-medium text-gray-600 group-hover:text-gray-800"
+                                                        >When scrolling</span
+                                                    >
+                                                </label>
+                                                <label
+                                                    class="flex items-center gap-x-2 py-0.5 cursor-pointer group"
+                                                >
+                                                    <input
+                                                        class="macos-radio h-3.5 w-3.5 border-gray-400 text-[#0071e3] focus:ring-1 focus:ring-offset-0 focus:ring-[#0071e3]/50 focus:outline-none transition-colors"
+                                                        name="scrollbar-visibility"
+                                                        type="radio"
+                                                    />
+                                                    <span
+                                                        class="text-xs font-medium text-gray-600 group-hover:text-gray-800"
+                                                        >Always</span
+                                                    >
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="flex justify-end pt-2">
+                                <button
+                                    class="flex items-center justify-center rounded-md h-8 px-4 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-medium leading-normal shadow-sm transition-colors active:bg-[#0066cc]"
+                                >
+                                    <svg
+                                        class="mr-1.5 h-3.5 w-3.5"
+                                        fill="currentColor"
+                                        viewBox="0 0 256 256"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M216,88H168V40a8,8,0,0,0-8-8H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H160a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V96A8,8,0,0,0,216,88Zm-56,80H48V48h72v48a8,8,0,0,0,8,8h40Zm48-48H168V104h48Z"
+                                        ></path>
+                                    </svg>
+                                    Generate Script
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
