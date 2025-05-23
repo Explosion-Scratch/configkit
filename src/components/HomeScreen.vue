@@ -1,7 +1,7 @@
 <template>
     <div
         ref="homeScreenRef"
-        class="home-screen-wrapper flex flex-col items-center justify-center text-center p-8 overflow-hidden"
+        class="home-screen-wrapper h-[91vh] flex flex-col items-center justify-center text-center p-8 overflow-hidden"
     >
         <div class="relative z-10 flex flex-col items-center">
             <div class="mb-6 w-36 h-36 relative">
@@ -206,7 +206,7 @@ function animateParticles() {
 async function preloadCursorSVGs() {
     for (const cursorName of cursorAssets) {
         try {
-            const response = await fetch(`/cursors/${cursorName}`); // Adjusted path
+            const response = await fetch(`/configkit/cursors/${cursorName}`); // Adjusted path
             if (!response.ok) throw new Error(`Failed to load ${cursorName}`);
             loadedCursorSVGs[cursorName] = await response.text();
         } catch (e) {
@@ -242,15 +242,17 @@ onMounted(async () => {
     await loadAndAnimateLogo();
     await preloadCursorSVGs();
     if (homeScreenRef.value) {
-        homeScreenRef.value.addEventListener("mousemove", handleMouseMove);
+        homeScreenRef.value
+            .closest(".bg-page-bg")
+            .addEventListener("mousemove", handleMouseMove);
         animateParticles(); // Start particle animation loop
     }
 });
 
 onUnmounted(() => {
-    if (homeScreenRef.value) {
-        homeScreenRef.value.removeEventListener("mousemove", handleMouseMove);
-    }
+    homeScreenRef.value
+        .closest(".bg-page-bg")
+        .removeEventListener("mousemove", handleMouseMove);
     if (particleRAF) {
         cancelAnimationFrame(particleRAF);
     }
