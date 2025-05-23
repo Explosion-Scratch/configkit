@@ -37,7 +37,7 @@
                 <MacInput
                     v-if="setting.parameterType === 'bool'"
                     type="checkbox"
-                    :id="settingId"
+                    :id="settingId + '-bool-check'"
                     :label="labelForBoolean"
                     :model-value="currentValue ?? false"
                     @update:modelValue="updateValue($event)"
@@ -110,16 +110,6 @@
                             <code>{{ setting.suggestedValue }}</code></span
                         >
                     </p>
-                    <button
-                        v-if="
-                            setting.suggestedValue !== null &&
-                            currentValue !== setting.suggestedValue
-                        "
-                        @click="applySuggestedValue"
-                        class="mt-1 small-text text-blue-600 hover:underline"
-                    >
-                        Use suggested
-                    </button>
                 </div>
             </div>
         </div>
@@ -156,12 +146,18 @@ watch(
 );
 
 function updateValue(newValue) {
+    console.log("newValue, currentValue.value:", newValue, currentValue.value);
     isSet.value = true; // Any direct input interaction means the user wants to set this value
     currentValue.value = newValue;
     emit("updateSetting", {
         key: `${props.setting.domain}.${props.setting.key}`,
         value: newValue,
     });
+    console.log(
+        "2: newValue, currentValue.value:",
+        newValue,
+        currentValue.value,
+    );
 }
 
 function resetToUnset() {

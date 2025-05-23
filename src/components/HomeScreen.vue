@@ -251,7 +251,7 @@ onMounted(async () => {
 
 onUnmounted(() => {
     homeScreenRef.value
-        .closest(".bg-page-bg")
+        ?.closest(".bg-page-bg")
         .removeEventListener("mousemove", handleMouseMove);
     if (particleRAF) {
         cancelAnimationFrame(particleRAF);
