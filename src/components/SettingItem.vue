@@ -134,6 +134,7 @@ import MacInput from "./MacInput.vue";
 import Icon from "./Icon.vue";
 import SettingInfo from "./SettingInfo.vue";
 import SettingsPresetDetail from "./presets/SettingsPresetDetail.vue";
+import { buildSettingId } from "../utils/settingId.js";
 
 const props = defineProps({
     setting: Object,
@@ -154,7 +155,7 @@ const props = defineProps({
 const emit = defineEmits(["updateSetting", "applyPresetValue", "revertPreset"]);
 
 const settingId = computed(
-    () => `${props.setting.domain}.${props.setting.key}`,
+    () => buildSettingId(props.setting.domain, props.setting.key),
 );
 
 const currentValue = ref(props.initialValue);
@@ -175,7 +176,7 @@ function updateValue(newValue) {
     isSet.value = true; // Any direct input interaction means the user wants to set this value
     currentValue.value = newValue;
     emit("updateSetting", {
-        key: `${props.setting.domain}.${props.setting.key}`,
+        key: buildSettingId(props.setting.domain, props.setting.key),
         value: newValue,
     });
     console.log(
@@ -189,7 +190,7 @@ function resetToUnset() {
     isSet.value = false;
     // currentValue.value can remain to show the last state, but it's effectively "unset" for the script
     emit("updateSetting", {
-        key: `${props.setting.domain}.${props.setting.key}`,
+        key: buildSettingId(props.setting.domain, props.setting.key),
         value: undefined,
     });
 }

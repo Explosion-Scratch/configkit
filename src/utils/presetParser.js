@@ -2,6 +2,8 @@
  * Utility functions for parsing macOS defaults scripts and extracting settings
  */
 
+import { buildSettingId, getDomainFromSettingId } from './settingId.js';
+
 /**
  * Parse a defaults script content and extract settings
  * @param {string} content - Raw shell script content
@@ -19,7 +21,7 @@ export function parseDefaultsScript(content) {
     try {
       const parsed = parseDefaultsCommand(command);
       if (parsed && parsed.domain && parsed.key) {
-        const settingId = `${parsed.domain}.${parsed.key}`;
+        const settingId = buildSettingId(parsed.domain, parsed.key);
         settings[settingId] = parsed.value;
       }
     } catch (error) {
@@ -323,8 +325,13 @@ export function getUniqueDomains(settings) {
   
   const domains = new Set();
   Object.keys(settings).forEach(settingId => {
-    const domain = settingId.split('.')[0];
-    if (domain) domains.add(domain);
+    try {
+      const domain = getDomainFromSettingId(settingId);
+      if (domain) domains.add(domain);
+    } catch (error) {
+      // Skip invalid setting IDs
+      console.warn('Invalid setting ID format:', settingId);
+    }
   });
   
   return Array.from(domains).sort();
@@ -342,7 +349,7 @@ export function validateSetting(settingId, allSettings) {
   }
   
   return allSettings.some(setting => 
-    `${setting.domain}.${setting.key}` === settingId
+    buildSettingId(setting.domain, setting.key) === settingId
   );
 }
 

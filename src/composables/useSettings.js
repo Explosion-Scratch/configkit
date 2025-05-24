@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue';
 import { useLocalStorage } from './useLocalStorage.js';
+import { buildSettingId } from '../utils/settingId.js';
 
 const MAX_COUNT_FOR_CATEGORY = 20;
 const LOCAL_STORAGE_KEY = 'macosdefaults-settings';
@@ -67,7 +68,7 @@ export function useSettings() {
 
     allSettings.value.forEach(setting => {
       if (setting.suggestedValue !== null && setting.suggestedValue !== undefined) {
-        const settingId = `${setting.domain}.${setting.key}`;
+        const settingId = buildSettingId(setting.domain, setting.key);
         const currentValue = selectedSettings.value[settingId];
         
         if (currentValue !== setting.suggestedValue) {
@@ -89,16 +90,17 @@ export function useSettings() {
   });
 
   const filteredApplyCount = computed(() => {
-    return allSettings.value.filter(setting => 
-      setting.suggestedValue !== null && 
-      setting.suggestedValue !== undefined &&
-      selectedSettings.value[`${setting.domain}.${setting.key}`] !== setting.suggestedValue
-    ).length;
+    return allSettings.value.filter(setting => {
+      const settingId = buildSettingId(setting.domain, setting.key);
+      return setting.suggestedValue !== null && 
+        setting.suggestedValue !== undefined &&
+        selectedSettings.value[settingId] !== setting.suggestedValue;
+    }).length;
   });
 
   const filteredChangedCount = computed(() => {
     return allSettings.value.filter(setting => {
-      const settingId = `${setting.domain}.${setting.key}`;
+      const settingId = buildSettingId(setting.domain, setting.key);
       return selectedSettings.value[settingId] !== undefined;
     }).length;
   });

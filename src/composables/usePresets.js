@@ -1,11 +1,17 @@
-import { ref, computed } from 'vue';
-import { useLocalStorage } from './useLocalStorage.js';
-import { parseDefaultsScript, countSettings, filterValidSettings } from '../utils/presetParser.js';
+import { ref, computed } from "vue";
+import { useLocalStorage } from "./useLocalStorage.js";
+import {
+  parseDefaultsScript,
+  countSettings,
+  filterValidSettings,
+} from "../utils/presetParser.js";
 
 export function usePresets() {
   const presets = ref([]);
-  const { value: appliedPresets, update: updateAppliedPresets } = useLocalStorage('appliedPresets', []);
-  const { value: settingOrigins, update: updateSettingOrigins } = useLocalStorage('settingOrigins', {});
+  const { value: appliedPresets, update: updateAppliedPresets } =
+    useLocalStorage("appliedPresets", []);
+  const { value: settingOrigins, update: updateSettingOrigins } =
+    useLocalStorage("settingOrigins", {});
   const isLoading = ref(false);
   const error = ref(null);
 
@@ -16,22 +22,24 @@ export function usePresets() {
     error.value = null;
 
     try {
-      const response = await fetch('/configkit/presets.json');
+      const response = await fetch("/configkit/presets.json");
       if (!response.ok) {
-        throw new Error(`Failed to load presets: ${response.status} ${response.statusText}`);
+        throw new Error(
+          `Failed to load presets: ${response.status} ${response.statusText}`,
+        );
       }
       const data = await response.json();
-      
+
       // Parse settings for each preset
-      const parsedPresets = data.map(preset => ({
+      const parsedPresets = data.map((preset) => ({
         ...preset,
         settings: parseDefaultsScript(preset.content),
-        settingsCount: countSettings(parseDefaultsScript(preset.content))
+        settingsCount: countSettings(parseDefaultsScript(preset.content)),
       }));
-      
+
       presets.value = parsedPresets;
     } catch (err) {
-      console.error('Error loading presets:', err);
+      console.error("Error loading presets:", err);
       error.value = err;
     } finally {
       isLoading.value = false;
@@ -39,7 +47,7 @@ export function usePresets() {
   };
 
   const getPreset = (presetId) => {
-    return presets.value.find(preset => preset.id === presetId);
+    return presets.value.find((preset) => preset.id === presetId);
   };
 
   const isPresetApplied = (presetId) => {
@@ -56,9 +64,9 @@ export function usePresets() {
       // Filter settings to only include valid ones
       const validSettings = filterValidSettings(preset.settings, allSettings);
       const settingsCount = Object.keys(validSettings).length;
-      
+
       if (settingsCount === 0) {
-        throw new Error('No valid settings found in preset');
+        throw new Error("No valid settings found in preset");
       }
 
       // Track origins for each setting
@@ -69,17 +77,17 @@ export function usePresets() {
         if (!newOrigins[settingId]) {
           newOrigins[settingId] = [];
         }
-        
+
         // Remove any existing entry for this preset
         newOrigins[settingId] = newOrigins[settingId].filter(
-          origin => origin.presetId !== presetId
+          (origin) => origin.presetId !== presetId,
         );
-        
+
         // Add new entry
         newOrigins[settingId].push({
           presetId,
           value,
-          appliedAt
+          appliedAt,
         });
       });
 
@@ -95,10 +103,10 @@ export function usePresets() {
 
       return {
         settingsApplied: settingsCount,
-        validSettings
+        validSettings,
       };
     } catch (err) {
-      console.error('Error applying preset:', err);
+      console.error("Error applying preset:", err);
       throw err;
     }
   };
@@ -106,27 +114,29 @@ export function usePresets() {
   const revertPreset = (presetId) => {
     try {
       // Remove from applied presets
-      const newAppliedPresets = appliedPresets.value.filter(id => id !== presetId);
+      const newAppliedPresets = appliedPresets.value.filter(
+        (id) => id !== presetId,
+      );
       updateAppliedPresets(newAppliedPresets);
 
       // Remove origins for this preset
       const newOrigins = { ...settingOrigins.value };
-      Object.keys(newOrigins).forEach(settingId => {
+      Object.keys(newOrigins).forEach((settingId) => {
         newOrigins[settingId] = newOrigins[settingId].filter(
-          origin => origin.presetId !== presetId
+          (origin) => origin.presetId !== presetId,
         );
-        
+
         // Remove empty arrays
         if (newOrigins[settingId].length === 0) {
           delete newOrigins[settingId];
         }
       });
-      
+
       updateSettingOrigins(newOrigins);
 
       return true;
     } catch (err) {
-      console.error('Error reverting preset:', err);
+      console.error("Error reverting preset:", err);
       return false;
     }
   };
@@ -137,8 +147,8 @@ export function usePresets() {
 
   const getPresetValueFrequency = (settingId) => {
     const frequencies = {};
-    
-    presets.value.forEach(preset => {
+
+    presets.value.forEach((preset) => {
       if (preset.settings && preset.settings[settingId] !== undefined) {
         const value = preset.settings[settingId];
         const key = JSON.stringify(value);
@@ -156,14 +166,14 @@ export function usePresets() {
     if (!preset) return [];
 
     const conflicts = [];
-    
+
     Object.entries(preset.settings).forEach(([settingId, presetValue]) => {
       const currentValue = currentSettings[settingId];
       if (currentValue !== undefined && currentValue !== presetValue) {
         conflicts.push({
           settingId,
           currentValue,
-          presetValue
+          presetValue,
         });
       }
     });
@@ -174,23 +184,27 @@ export function usePresets() {
   const getPresetStats = () => {
     const totalPresets = presets.value.length;
     const appliedCount = appliedPresets.value.length;
-    const totalSettings = presets.value.reduce((sum, preset) => sum + preset.settingsCount, 0);
-    
+    const totalSettings = presets.value.reduce(
+      (sum, preset) => sum + preset.settingsCount,
+      0,
+    );
+
     return {
       totalPresets,
       appliedCount,
       totalSettings,
-      averageSettingsPerPreset: totalPresets > 0 ? Math.round(totalSettings / totalPresets) : 0
+      averageSettingsPerPreset:
+        totalPresets > 0 ? Math.round(totalSettings / totalPresets) : 0,
     };
   };
 
   // Computed properties
   const availablePresets = computed(() => {
-    return presets.value.filter(preset => preset.settingsCount > 0);
+    return presets.value.filter((preset) => preset.settingsCount > 0);
   });
 
   const appliedPresetsList = computed(() => {
-    return appliedPresets.value.map(id => getPreset(id)).filter(Boolean);
+    return appliedPresets.value.map((id) => getPreset(id)).filter(Boolean);
   });
 
   return {
@@ -200,11 +214,11 @@ export function usePresets() {
     settingOrigins,
     isLoading,
     error,
-    
+
     // Computed
     availablePresets,
     appliedPresetsList,
-    
+
     // Methods
     loadPresets,
     getPreset,
@@ -214,6 +228,6 @@ export function usePresets() {
     getSettingOrigins,
     getPresetValueFrequency,
     getConflictingSettings,
-    getPresetStats
+    getPresetStats,
   };
 }

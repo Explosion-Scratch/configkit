@@ -11,18 +11,31 @@
         <div class="space-y-5">
             <SettingItem
                 v-for="setting in settings"
-                :key="`${setting.domain}-${setting.key}`"
+                :key="`${setting.domain}$${setting.key}`"
                 :setting="setting"
                 :initialValue="
                     /* Use initialValue prop */
-                    selectedSettings[`${setting.domain}.${setting.key}`]
+                    selectedSettings[
+                        buildSettingId(setting.domain, setting.key)
+                    ]
                 "
                 :presets="presets"
-                :preset-values="getPresetValueFrequency(`${setting.domain}.${setting.key}`)"
-                :setting-origins="getSettingOrigins(`${setting.domain}.${setting.key}`)"
+                :preset-values="
+                    getPresetValueFrequency(
+                        buildSettingId(setting.domain, setting.key),
+                    )
+                "
+                :setting-origins="
+                    getSettingOrigins(
+                        buildSettingId(setting.domain, setting.key),
+                    )
+                "
                 @updateSetting="
                     /* Use updateSetting event */
-                    updateSetting(`${setting.domain}.${setting.key}`, $event)
+                    updateSetting(
+                        buildSettingId(setting.domain, setting.key),
+                        $event,
+                    )
                 "
                 @revertPreset="
                     /* Emit revert preset event */
@@ -35,6 +48,7 @@
 
 <script setup>
 import SettingItem from "./SettingItem.vue";
+import { buildSettingId } from "../utils/settingId.js";
 
 defineProps({
     categoryName: String,
@@ -43,18 +57,21 @@ defineProps({
     selectedSettings: Object,
     presets: {
         type: Array,
-        default: () => []
+        default: () => [],
     },
     getPresetValueFrequency: {
         type: Function,
-        default: () => () => []
+        default: () => () => [],
     },
     getSettingOrigins: {
         type: Function,
-        default: () => () => []
-    }
+        default: () => () => [],
+    },
 });
-const emit = defineEmits(["updateSetting", "revertPreset"]); /* Emits updateSetting and revertPreset */
+const emit = defineEmits([
+    "updateSetting",
+    "revertPreset",
+]); /* Emits updateSetting and revertPreset */
 
 function updateSetting(key, value) {
     /* Emit updateSetting with object payload */

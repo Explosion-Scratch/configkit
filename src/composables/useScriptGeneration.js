@@ -1,4 +1,5 @@
 import { ref, computed } from 'vue';
+import { buildSettingId } from '../utils/settingId.js';
 
 export function useScriptGeneration() {
   const isGenerating = ref(false);
@@ -38,7 +39,7 @@ export function useScriptGeneration() {
       const settingsByDomain = {};
       
       settingsToApply.forEach(([settingId, value]) => {
-        const setting = allSettings.find(s => `${s.domain}.${s.key}` === settingId);
+        const setting = allSettings.find(s => buildSettingId(s.domain, s.key) === settingId);
         if (!setting) return;
 
         const domain = setting.domain;
@@ -147,7 +148,7 @@ export function useScriptGeneration() {
 
       return command;
     } catch (err) {
-      console.warn(`Failed to generate command for ${setting.domain}.${setting.key}:`, err);
+      console.warn(`Failed to generate command for ${buildSettingId(setting.domain, setting.key)}:`, err);
       return null;
     }
   };

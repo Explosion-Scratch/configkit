@@ -2920,30 +2920,6 @@
   },
   {
     "category": "Finder",
-    "title": "Avoid .DS_Store Files on USB Volumes",
-    "description": "Avoid creating .DS_Store files on USB volumes.",
-    "longDescription": "Prevents Finder from creating .DS_Store files on USB storage devices.",
-    "domain": "com.apple.desktopservices",
-    "key": "DSDontWriteUSBStores",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Do not write .DS_Store files on USB volumes."
-      },
-      {
-        "value": false,
-        "description": "Write .DS_Store files on USB volumes (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
     "title": "Disable Disk Image Verification",
     "description": "Disable disk image verification for all types.",
     "longDescription": "Skips the verification process when mounting disk images (.dmg files). This can speed up mounting but bypasses a security check.",
@@ -6719,119 +6695,6 @@
     "notes": []
   },
   {
-    "category": "Dock",
-    "title": "Highlight Hover Effect for Stacks",
-    "description": "Enable a highlight hover effect for items in a Dock stack when viewed in grid mode.",
-    "longDescription": "When a Dock stack is opened in grid view, hovering the mouse over an item will cause it to be highlighted. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "mouse-over-hilite-stack",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable highlight hover effect."
-      },
-      {
-        "value": false,
-        "description": "Disable highlight hover effect (default)."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Dock",
-    "title": "Minimize Windows to Application Icon",
-    "description": "Minimize windows into their application’s icon in the Dock instead of to a new Dock tile.",
-    "longDescription": "When this is enabled, minimizing a window causes it to be visually absorbed into its application's icon in the Dock, rather than creating a separate preview tile for the minimized window. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "minimize-to-application",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Minimize to application icon."
-      },
-      {
-        "value": false,
-        "description": "Minimize to a new tile in Dock (default)."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Dock",
-    "title": "Show Indicator Lights for Open Applications",
-    "description": "Display a small dot beneath open applications in the Dock.",
-    "longDescription": "Shows a small indicator light (dot) below the icon of any application that is currently running. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "show-process-indicators",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Show indicator lights (default)."
-      },
-      {
-        "value": false,
-        "description": "Hide indicator lights."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Dock",
-    "title": "Clear Persistent App Icons",
-    "description": "Remove all pinned application icons from the Dock.",
-    "longDescription": "This command clears all application icons that are persistently pinned to the Dock, leaving only running applications (if `static-only` is false) or an empty application section. Useful for a clean setup. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "persistent-apps",
-    "parameterType": "array",
-    "suggestedValue": null,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "To clear, set to an empty array: `defaults write com.apple.dock persistent-apps -array`"
-    ]
-  },
-  {
-    "category": "Dock",
-    "title": "Disable Application Launch Animation",
-    "description": "Don’t animate opening applications from the Dock.",
-    "longDescription": "Disables the bouncing animation that normally occurs when an application is launched from the Dock. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "launchanim",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable launch animation (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable launch animation."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
     "category": "Mission Control",
     "title": "Mission Control Animation Duration",
     "description": "Adjust the speed of Mission Control animations.",
@@ -6919,54 +6782,6 @@
     "requiresSudo": false,
     "dependencies": [],
     "notes": ["Relevant for macOS versions where Dashboard could be a Space."]
-  },
-  {
-    "category": "Dock",
-    "title": "Make Hidden App Icons Translucent",
-    "description": "Render Dock icons of hidden applications as translucent.",
-    "longDescription": "When an application is hidden (e.g., via Command-H), its icon in the Dock will appear semi-transparent. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "showhidden",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Make hidden app icons translucent."
-      },
-      {
-        "value": false,
-        "description": "Hidden app icons appear normal (default)."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Dock",
-    "title": "Disable Launchpad Gesture",
-    "description": "Disable the pinch gesture (thumb and three fingers) for opening Launchpad.",
-    "longDescription": "Turns off the trackpad gesture that opens Launchpad. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "showLaunchpadGestureEnabled",
-    "parameterType": "int",
-    "suggestedValue": 0,
-    "acceptedParameterValues": [
-      {
-        "value": 1,
-        "description": "Enable Launchpad gesture (default)."
-      },
-      {
-        "value": 0,
-        "description": "Disable Launchpad gesture."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
   },
   {
     "category": "Dock",
