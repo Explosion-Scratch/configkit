@@ -1,0 +1,110 @@
+[
+  {
+    "category": "Activity Monitor",
+    "title": "Dock Icon type",
+    "description": "Choose what information should be shown in the app's Dock icon, if any.",
+    "longDescription": "Choose what information should be shown in the app's Dock icon, if any.",
+    "domain": "com.apple.ActivityMonitor",
+    "key": "IconType",
+    "parameterType": "int",
+    "suggestedValue": null,
+    "acceptedParameterValues": [
+      {
+        "value": 0,
+        "description": "Application Icon"
+      },
+      {
+        "value": 5,
+        "description": "CPU Usage"
+      },
+      {
+        "value": 6,
+        "description": "CPU History"
+      },
+      {
+        "value": 2,
+        "description": "Network Usage"
+      },
+      {
+        "value": 3,
+        "description": "Disk Activity"
+      }
+    ],
+    "requiresRestart": "Activity Monitor",
+    "requiresSudo": false,
+    "dependencies": [],
+    "notes": []
+  },
+  {
+    "category": "Activity Monitor",
+    "title": "Update Frequency",
+    "description": "How frequently Activity Monitor should update its data, in seconds.",
+    "longDescription": "How frequently Activity Monitor should update its data, in seconds.",
+    "domain": "com.apple.ActivityMonitor",
+    "key": "UpdatePeriod",
+    "parameterType": "int",
+    "suggestedValue": null,
+    "acceptedParameterValues": [
+      {
+        "value": 1,
+        "description": "Very often (1 sec)"
+      },
+      {
+        "value": 2,
+        "description": "Often (2 sec)"
+      },
+      {
+        "value": 5,
+        "description": "Normally (5 sec)"
+      }
+    ],
+    "requiresRestart": "Activity Monitor",
+    "requiresSudo": false,
+    "dependencies": [],
+    "notes": []
+  },
+  {
+    "category": "Activity Monitor",
+    "title": "Show Main Window on Launch",
+    "description": "Show the main window when launching Activity Monitor.",
+    "longDescription": "Controls whether the main Activity Monitor window appears automatically upon application launch.",
+    "domain": "com.apple.ActivityMonitor",
+    "key": "OpenMainWindow",
+    "parameterType": "bool",
+    "suggestedValue": true,
+    "acceptedParameterValues": [
+      {
+        "value": true,
+        "description": "Show main window on launch."
+      },
+      {
+        "value": false,
+        "description": "Do not show main window on launch."
+      }
+    ],
+    "requiresRestart": "Activity Monitor",
+    "requiresSudo": false,
+    "dependencies": [],
+    "notes": []
+  },
+  {
+    "category": "Activity Monitor",
+    "title": "Show All Processes",
+    "description": "Show all processes in Activity Monitor by default.",
+    "longDescription": "Configures Activity Monitor to display all processes rather than a specific category (e.g., My Processes) when opened.",
+    "domain": "com.apple.ActivityMonitor",
+    "key": "ShowCategory",
+    "parameterType": "int",
+    "suggestedValue": 0,
+    "acceptedParameterValues": [
+      {
+        "value": 0,
+        "description": "All Processes"
+      }
+    ],
+    "requiresRestart": "Activity Monitor",
+    "requiresSudo": false,
+    "dependencies": [],
+    "notes": []
+  }
+]

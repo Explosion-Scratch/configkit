@@ -112,6 +112,18 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Preset Information -->
+            <SettingsPresetDetail
+                :setting-id="settingId"
+                :current-value="currentValue"
+                :preset-values="presetValues"
+                :setting-origins="settingOrigins"
+                :presets="presets"
+                @apply-preset-value="handleApplyPresetValue"
+                @revert-preset="handleRevertPreset"
+                @reset-setting="resetToUnset"
+            />
         </div>
     </section>
 </template>
@@ -120,13 +132,26 @@
 import { computed, ref, watch } from "vue";
 import MacInput from "./MacInput.vue";
 import Icon from "./Icon.vue";
-import SettingInfo from "./SettingInfo.vue"; // Import the new component
+import SettingInfo from "./SettingInfo.vue";
+import SettingsPresetDetail from "./presets/SettingsPresetDetail.vue";
 
 const props = defineProps({
     setting: Object,
     initialValue: [String, Number, Boolean, Array, undefined],
+    presetValues: {
+        type: Array,
+        default: () => []
+    },
+    settingOrigins: {
+        type: Array,
+        default: () => []
+    },
+    presets: {
+        type: Array,
+        default: () => []
+    }
 });
-const emit = defineEmits(["updateSetting"]);
+const emit = defineEmits(["updateSetting", "applyPresetValue", "revertPreset"]);
 
 const settingId = computed(
     () => `${props.setting.domain}.${props.setting.key}`,
@@ -201,6 +226,14 @@ const formatSuggestedValue = (value, type) => {
     if (type === "bool") return value ? "Enabled" : "Disabled";
     if (type === "string" && value === "") return "Empty String";
     return String(value);
+};
+
+const handleApplyPresetValue = (value) => {
+    updateValue(value);
+};
+
+const handleRevertPreset = (presetId) => {
+    emit("revertPreset", presetId);
 };
 </script>
 <style scoped>

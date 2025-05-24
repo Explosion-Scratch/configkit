@@ -17,9 +17,16 @@
                     /* Use initialValue prop */
                     selectedSettings[`${setting.domain}.${setting.key}`]
                 "
+                :presets="presets"
+                :preset-values="getPresetValueFrequency(`${setting.domain}.${setting.key}`)"
+                :setting-origins="getSettingOrigins(`${setting.domain}.${setting.key}`)"
                 @updateSetting="
                     /* Use updateSetting event */
                     updateSetting(`${setting.domain}.${setting.key}`, $event)
+                "
+                @revertPreset="
+                    /* Emit revert preset event */
+                    $emit('revertPreset', $event)
                 "
             />
         </div>
@@ -34,8 +41,20 @@ defineProps({
     categoryDescription: String,
     settings: Array,
     selectedSettings: Object,
+    presets: {
+        type: Array,
+        default: () => []
+    },
+    getPresetValueFrequency: {
+        type: Function,
+        default: () => () => []
+    },
+    getSettingOrigins: {
+        type: Function,
+        default: () => () => []
+    }
 });
-const emit = defineEmits(["updateSetting"]); /* Emits updateSetting */
+const emit = defineEmits(["updateSetting", "revertPreset"]); /* Emits updateSetting and revertPreset */
 
 function updateSetting(key, value) {
     /* Emit updateSetting with object payload */

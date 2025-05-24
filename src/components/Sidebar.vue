@@ -1,6 +1,6 @@
 <template>
     <div
-        class="w-64 bg-sidebar-bg border-r border-gray-300/70 py-4 px-2 pl-4 space-y-4 macos-scrollbar overflow-y-auto macos-scrollbar"
+        class="w-64 bg-sidebar-bg border-r border-gray-300/70 py-4 px-2 pl-4 space-y-4 macos-scrollbar overflow-y-auto macos-scrollbar h-full"
     >
         <div class="relative">
             <input
@@ -28,8 +28,53 @@
             </div>
         </div>
         <nav class="space-y-1">
+            <!-- Home -->
             <a
-                v-for="category in ['Home', ...categories]"
+                href="#"
+                class="group block px-2.5 py-1.5 text-xs font-medium text-gray-700 rounded-md transition-colors duration-75 ease-in-out focus:outline-none active:opacity-90"
+                :class="{
+                    'text-accent-500 hover:bg-accent-600 bg-accent-600 text-white':
+                        selectedCategory === 'Home',
+                }"
+                @click.prevent="$emit('selectCategory', 'Home')"
+            >
+                <div class="flex justify-between items-center w-full">
+                    <span>Home</span>
+                </div>
+            </a>
+
+            <!-- Presets -->
+            <a
+                href="#"
+                class="group block px-2.5 py-1.5 text-xs font-medium text-gray-700 rounded-md transition-colors duration-75 ease-in-out focus:outline-none active:opacity-90"
+                :class="{
+                    'text-accent-500 hover:bg-accent-600 bg-accent-600 text-white':
+                        selectedCategory === 'Presets',
+                }"
+                @click.prevent="$emit('selectCategory', 'Presets')"
+            >
+                <div class="flex justify-between items-center w-full">
+                    <span>Presets</span>
+                    <span
+                        v-if="appliedPresetsCount > 0"
+                        :class="
+                            selectedCategory === 'Presets'
+                                ? 'text-white'
+                                : 'text-text-primary/50'
+                        "
+                        class="ml-2 flex-shrink-0"
+                    >
+                        {{ appliedPresetsCount }}
+                    </span>
+                </div>
+            </a>
+
+            <!-- Separator -->
+            <hr class="my-2 border-gray-300/50" />
+
+            <!-- Categories -->
+            <a
+                v-for="category in categories"
                 :key="category"
                 href="#"
                 class="group block px-2.5 py-1.5 text-xs font-medium text-gray-700 rounded-md transition-colors duration-75 ease-in-out focus:outline-none active:opacity-90"
@@ -64,6 +109,10 @@ defineProps({
     filteredSettings: Object,
     selectedCategory: String,
     searchTerm: String,
+    appliedPresetsCount: {
+        type: Number,
+        default: 0,
+    },
 });
 defineEmits(["selectCategory", "update:searchTerm"]);
 </script>

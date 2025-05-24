@@ -242,17 +242,13 @@ onMounted(async () => {
     await loadAndAnimateLogo();
     await preloadCursorSVGs();
     if (homeScreenRef.value) {
-        homeScreenRef.value
-            .closest(".bg-page-bg")
-            .addEventListener("mousemove", handleMouseMove);
+        homeScreenRef.value.addEventListener("mousemove", handleMouseMove);
         animateParticles(); // Start particle animation loop
     }
 });
 
 onUnmounted(() => {
-    homeScreenRef.value
-        ?.closest(".bg-page-bg")
-        .removeEventListener("mousemove", handleMouseMove);
+    homeScreenRef.value?.removeEventListener("mousemove", handleMouseMove);
     if (particleRAF) {
         cancelAnimationFrame(particleRAF);
     }

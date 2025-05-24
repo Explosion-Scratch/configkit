@@ -56,11 +56,24 @@
 
     color: #fff;
 }
+
+.mac-btn--large {
+    padding: 8px 20px;
+    font-size: 0.875rem;
+}
 </style>
 <script>
 export default {
     props: {
         variant: {
+            type: String,
+            default: "",
+        },
+        size: {
+            type: String,
+            default: "",
+        },
+        classes: {
             type: String,
             default: "",
         },
