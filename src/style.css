@@ -52,21 +52,55 @@ body {
     scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
     scrollbar-width: thin;
 }
-
-/* macos-radio already uses 'white' via fill='white' in data:image/svg+xml */
-
-/* macos-checkbox already uses 'white' via fill='white' in data:image/svg+xml */
-.macos-checkbox:checked {
-    /* Replace hex with var */
-    background-color: rgb(var(--color-accent-500));
-    border-color: rgb(var(--color-accent-500));
+@utility macos-checkbox {
+    & {
+        @apply macos-focus;
+        appearance: none;
+        accent-color: var(--color-accent-500) !important;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+        background: white;
+    }
+    &:checked {
+        /* Replace hex with var */
+        background-color: var(--color-accent-100);
+        border-color: var(--color-accent-100);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3C!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --%3E%3Cpath fill='white' d='m229.66 77.66l-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69L218.34 66.34a8 8 0 0 1 11.32 11.32'/%3E%3C/svg%3E") !important;
+        background-size: 0.9em 0.9em;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &:checked:hover {
+        /* Replace hex with var */
+        background-color: var(--color-accent-700);
+    }
 }
-.macos-checkbox:checked:hover {
-    /* Replace hex with var */
-    background-color: rgb(var(--color-accent-700));
-}
-
 /* macos-radio checked style using data:image/svg+xml already uses 'white' */
 .macos-radio:checked {
+    @apply macos-focus;
+
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+@utility macos-border {
+    @apply border border-gray-300 dark:border-gray-600;
+}
+
+@utility macos-focus {
+    @apply focus:ring-3 focus:ring-accent-500/50 focus:outline-none;
+}
+
+@utility macos-shadow-sm {
+    box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.15);
+}
+
+@utility macos-shadow-xs {
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.15);
+}
+
+@utility macos-select {
+    @apply px-2 py-1 text-xs macos-focus rounded-md macos-border macos-shadow-xs bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
+@utility macos-disabled {
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
 }

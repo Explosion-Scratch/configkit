@@ -4,7 +4,7 @@
     >
         <div class="relative">
             <input
-                class="w-full pl-8 pr-3 py-1.5 text-xs rounded-md outline-none transition-colors bg-black/5 disabled:opacity-50 disabled:cursor-not-allowed focus:ring-3 focus:ring-accent-500/50"
+                class="w-full pl-8 pr-3 py-1.5 text-xs rounded-md outline-none transition-colors bg-black/5 disabled:opacity-50 disabled:cursor-not-allowed macos-focus"
                 placeholder="Search options..."
                 type="search"
                 :value="searchTerm"

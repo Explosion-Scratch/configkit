@@ -44,23 +44,24 @@
             </div>
 
             <div class="flex flex-col sm:flex-row items-center gap-2">
-                <button @click="$emit('exploreSettings')" class="btn-primary">
+                <Button @click="$emit('exploreSettings')" class="btn-primary">
                     <Icon name="settings" size="md" class="mr-2 -ml-1" />
                     Start Customizing
-                </button>
-                <a
-                    href="https://github.com/explosion-scratch/configkit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-secondary group"
+                </Button>
+                <Button class="btn-secondary group"
+                    ><a
+                        href="https://github.com/explosion-scratch/configkit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon
+                            name="github"
+                            size="md"
+                            class="mr-2 -ml-1 group-hover:animate-pulse-fast"
+                        />
+                        View on GitHub
+                    </a></Button
                 >
-                    <Icon
-                        name="github"
-                        size="md"
-                        class="mr-2 -ml-1 group-hover:animate-pulse-fast"
-                    />
-                    View on GitHub
-                </a>
             </div>
 
             <p class="text-xs text-gray-400 mt-16">

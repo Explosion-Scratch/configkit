@@ -2,6 +2,8 @@
     <button
         :class="[
             'mac-btn',
+            'macos-focus',
+            'macos-shadow-sm',
             { 'mac-btn--primary': variant === 'primary' },
             {
                 'mac-btn--large': size === 'large',
@@ -31,14 +33,9 @@
     /* White background already standard, or keep as is */
     background: #fff;
     border: none;
-    box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.15);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-}
-
-.mac-btn:focus {
-    @apply ring-4 ring-accent-600/40 outline-none;
 }
 
 .mac-btn--primary {

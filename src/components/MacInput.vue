@@ -12,12 +12,7 @@
                     :checked="modelValue"
                     @change="$emit('update:modelValue', $event.target.checked)"
                     :disabled="disabled"
-                    class="macos-checkbox size-3.5 rounded border-gray-400 bg-transparent text-accent-500 checked:bg-accent-500 checked:border-accent-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    :style="{
-                        backgroundImage: modelValue
-                            ? `var(--checkbox-tick-svg)`
-                            : 'none',
-                    }"
+                    class="macos-checkbox size-3.5 rounded border-gray-400 bg-transparent text-accent-500 checked:bg-accent-500 checked:border-accent-500 transition-colors macos-disabled"
                 />
                 <span
                     v-if="label"
@@ -50,7 +45,7 @@
                         )
                     "
                     :disabled="disabled"
-                    class="macos-radio size-3.5 border-gray-400 text-accent-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="macos-radio size-3.5 border-gray-400 text-accent-500 transition-colors macos-disabled"
                 />
                 <span
                     v-if="label"
@@ -100,11 +95,10 @@
                               ? '1'
                               : undefined
                     "
-                    class="w-full bg-white px-3 py-1.5 text-xs rounded-md outline-none transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:ring-3 focus:ring-accent-500/50"
+                    class="macos-focus w-full bg-white px-3 py-1.5 text-xs rounded-md outline-none macos-disabled macos-focus border-1 border-gray-200 macos-shadow-xs"
                     :class="{
                         'pl-8 pr-3': type === 'search' && !noSearchIcon,
                         'px-2.5': type !== 'search' || noSearchIcon,
-                        'focus:border-accent-500 focus:ring-1 focus:ring-accent-500/50': true,
                     }"
                     :value="modelValue"
                     @input="
@@ -202,11 +196,6 @@ const convertToOriginalType = (originalType, inputValue) => {
 </script>
 
 <style scoped>
-/* Removed the redundant :root var definition */
-/* :root { --checkbox-tick-svg: url("data:image/svg+xml,..."); } */
-/* Removed the redundant checked styles already in style.css */
-/* .macos-checkbox:checked { background-image: var(--checkbox-tick-svg); } */
-
 input {
     cursor: pointer;
 }
