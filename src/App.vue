@@ -98,7 +98,7 @@
                     </div>
 
                     <!-- Action buttons -->
-                    <div class="flex flex-wrap items-center gap-2 mt-4">
+                    <div class="flex justify-start gap-2 mt-4">
                         <Button
                             v-if="filteredApplyCount > 0"
                             variant="primary"

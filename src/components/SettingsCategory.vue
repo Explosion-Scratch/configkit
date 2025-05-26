@@ -1,13 +1,5 @@
 <template>
-    <div class="max-w-2xl mx-auto space-y-6">
-        <div class="flex flex-col gap-1">
-            <h1 class="text-2xl font-semibold text-text-primary">
-                {{ categoryName }} Settings
-            </h1>
-            <p v-if="categoryDescription" class="text-xs text-gray-500">
-                {{ categoryDescription }}
-            </p>
-        </div>
+    <div class="mx-4 space-y-6">
         <div class="space-y-5">
             <SettingItem
                 v-for="setting in settings"

@@ -15,6 +15,7 @@
     </button>
 </template>
 <style scoped>
+@import "../style.css";
 /* Added scoped for better practice */
 .mac-btn {
     font-size: 0.8em;
@@ -30,30 +31,26 @@
     /* White background already standard, or keep as is */
     background: #fff;
     border: none;
-    box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0.5px 3px rgba(0, 0, 0, 0.15);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
 }
 
 .mac-btn:focus {
-    box-shadow:
-        0px 0.5px 1px rgba(0, 0, 0, 0.1),
-        0px 0px 0px 3.5px rgba(var(--color-accent-focus) / 0.5);
-    outline: 0;
+    @apply ring-4 ring-accent-600/40 outline-none;
 }
 
 .mac-btn--primary {
     background: linear-gradient(
-        180deg,
-        rgb(var(--color-accent-300)) 0%,
-        rgb(var(--color-accent-450)) 100%
+        var(--color-accent-300),
+        var(--color-accent-450)
     );
     background-origin: border-box;
-    box-shadow:
-        0px 0.5px 1.5px rgba(var(--color-accent-450) / 0.25),
-        inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
-
+    /* box-shadow:
+        0px 0.5px 1.5px var(--color-accent-450),
+        inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2); */
+    @apply shadow-md shadow-accent-450/20;
     color: #fff;
 }
 

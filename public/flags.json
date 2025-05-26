@@ -631,7 +631,9 @@
     "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["This action will clear your Dock of pinned applications."]
+    "notes": [
+      "This action will clear your Dock of pinned applications."
+    ]
   },
   {
     "category": "Dock",
@@ -975,7 +977,9 @@
     "requiresRestart": "App",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Changes may require restarting applications to take effect."]
+    "notes": [
+      "Changes may require restarting applications to take effect."
+    ]
   },
   {
     "category": "Finder",
@@ -1046,7 +1050,9 @@
     "requiresRestart": "Finder",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Behaves strangely when activated, use with caution."]
+    "notes": [
+      "Behaves strangely when activated, use with caution."
+    ]
   },
   {
     "category": "Finder",
@@ -1347,7 +1353,9 @@
         "settingId": "NSGlobalDomain.ApplePressAndHoldEnabled"
       }
     ],
-    "notes": ["A value of 1 is very fast. Default is typically 2."]
+    "notes": [
+      "A value of 1 is very fast. Default is typically 2."
+    ]
   },
   {
     "category": "Keyboard",
@@ -1366,7 +1374,9 @@
         "settingId": "NSGlobalDomain.ApplePressAndHoldEnabled"
       }
     ],
-    "notes": ["A value of 10 is very short. Default is typically 15."]
+    "notes": [
+      "A value of 10 is very short. Default is typically 15."
+    ]
   },
   {
     "category": "Menu Bar",
@@ -1475,30 +1485,6 @@
       }
     ],
     "requiresRestart": "App",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Miscellaneous",
-    "title": "Spring Loading for All Dock Items",
-    "description": "Enable spring loading behavior for all items in the Dock.",
-    "longDescription": "When a file is dragged over an application icon in the Dock and held, the application will open or activate, allowing the file to be dropped into it. This behavior applies to all Dock items, including those not typically supporting spring-loading. This functionality is the same as `com.apple.dock.enable-spring-load-actions-on-all-items`.",
-    "domain": "com.apple.dock",
-    "key": "enable-spring-load-actions-on-all-items",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable spring loading for all Dock items."
-      },
-      {
-        "value": false,
-        "description": "Disable spring loading for all Dock items (default)."
-      }
-    ],
-    "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
     "notes": []
@@ -1743,7 +1729,9 @@
     "requiresRestart": "Mac",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["This setting was introduced in macOS 14 Sonoma."]
+    "notes": [
+      "This setting was introduced in macOS 14 Sonoma."
+    ]
   },
   {
     "category": "Mouse",
@@ -1938,7 +1926,9 @@
     "requiresRestart": "Simulator",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["The folder specified must exist in the filesystem."]
+    "notes": [
+      "The folder specified must exist in the filesystem."
+    ]
   },
   {
     "category": "TextEdit",
@@ -2114,7 +2104,9 @@
     "requiresRestart": "Logout",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Mutually exclusive with `Dragging` and `DragLock`."]
+    "notes": [
+      "Mutually exclusive with `Dragging` and `DragLock`."
+    ]
   },
   {
     "category": "Xcode",
@@ -2220,7 +2212,9 @@
     "requiresRestart": "App",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Example for green: `\"0.764700 0.976500 0.568600\"`"]
+    "notes": [
+      "Example for green: `\"0.764700 0.976500 0.568600\"`"
+    ]
   },
   {
     "category": "General UI/UX",
@@ -2685,10 +2679,22 @@
     "parameterType": "int",
     "suggestedValue": 262144,
     "acceptedParameterValues": [
-      { "value": 131072, "description": "Shift" },
-      { "value": 262144, "description": "Control" },
-      { "value": 524288, "description": "Option" },
-      { "value": 1048576, "description": "Command" }
+      {
+        "value": 131072,
+        "description": "Shift"
+      },
+      {
+        "value": 262144,
+        "description": "Control"
+      },
+      {
+        "value": 524288,
+        "description": "Option"
+      },
+      {
+        "value": 1048576,
+        "description": "Command"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -2741,7 +2747,9 @@
     "requiresRestart": null,
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Also set `askForPasswordDelay` to 0."]
+    "notes": [
+      "Also set `askForPasswordDelay` to 0."
+    ]
   },
   {
     "category": "Screen",
@@ -3120,7 +3128,9 @@
     "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Relevant for macOS versions where Dashboard was a Space."]
+    "notes": [
+      "Relevant for macOS versions where Dashboard was a Space."
+    ]
   },
   {
     "category": "Mission Control",
@@ -3212,7 +3222,9 @@
     "requiresRestart": "Safari",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Consider also setting `SuppressSearchSuggestions` to true."]
+    "notes": [
+      "Consider also setting `SuppressSearchSuggestions` to true."
+    ]
   },
   {
     "category": "Safari",
@@ -3811,30 +3823,6 @@
   },
   {
     "category": "TextEdit",
-    "title": "Default to Plain Text Mode",
-    "description": "Use plain text mode for new TextEdit documents.",
-    "longDescription": "Sets TextEdit to create new documents in plain text (.txt) format by default, instead of rich text (.rtf).",
-    "domain": "com.apple.TextEdit",
-    "key": "RichText",
-    "parameterType": "int",
-    "suggestedValue": 0,
-    "acceptedParameterValues": [
-      {
-        "value": 1,
-        "description": "Rich text mode (default)."
-      },
-      {
-        "value": 0,
-        "description": "Plain text mode."
-      }
-    ],
-    "requiresRestart": "TextEdit",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "TextEdit",
     "title": "Default Plain Text Encoding (Read)",
     "description": "Open plain text files as UTF-8 in TextEdit.",
     "longDescription": "Sets the default character encoding TextEdit uses when opening plain text files to UTF-8.",
@@ -3912,7 +3900,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo pmset -a lidwake 1`."]
+    "notes": [
+      "Managed via `sudo pmset -a lidwake 1`."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -3936,7 +3926,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo pmset -a autorestart 1`."]
+    "notes": [
+      "Managed via `sudo pmset -a autorestart 1`."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -3960,7 +3952,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo systemsetup -setrestartfreeze on`."]
+    "notes": [
+      "Managed via `sudo systemsetup -setrestartfreeze on`."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -3975,7 +3969,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo pmset -a displaysleep 15` (for 15 minutes)."]
+    "notes": [
+      "Managed via `sudo pmset -a displaysleep 15` (for 15 minutes)."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -3995,7 +3991,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo pmset -c sleep 0`."]
+    "notes": [
+      "Managed via `sudo pmset -c sleep 0`."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -4010,7 +4008,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo pmset -b sleep 5` (for 5 minutes)."]
+    "notes": [
+      "Managed via `sudo pmset -b sleep 5` (for 5 minutes)."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -4025,7 +4025,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo pmset -a standbydelay 86400`."]
+    "notes": [
+      "Managed via `sudo pmset -a standbydelay 86400`."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -4049,7 +4051,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo systemsetup -setcomputersleep Off`."]
+    "notes": [
+      "Managed via `sudo systemsetup -setcomputersleep Off`."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -4142,7 +4146,9 @@
     "requiresRestart": null,
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["300 seconds = 5 minutes."]
+    "notes": [
+      "300 seconds = 5 minutes."
+    ]
   },
   {
     "category": "Energy Saver",
@@ -4166,7 +4172,9 @@
     "requiresRestart": null,
     "requiresSudo": true,
     "dependencies": [],
-    "notes": ["Managed via `sudo pmset -a destroyfvkeyonstandby 1`."]
+    "notes": [
+      "Managed via `sudo pmset -a destroyfvkeyonstandby 1`."
+    ]
   },
   {
     "category": "Miscellaneous",
@@ -4205,7 +4213,9 @@
     "requiresRestart": "Bluetooth",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Typical default is lower. 40-58 are common custom values."]
+    "notes": [
+      "Typical default is lower. 40-58 are common custom values."
+    ]
   },
   {
     "category": "Spotlight",
@@ -4252,7 +4262,9 @@
     "suggestedValue": null,
     "acceptedParameterValues": [
       {
-        "value": [4],
+        "value": [
+          4
+        ],
         "description": "UTF-8"
       }
     ],
@@ -4569,40 +4581,6 @@
     ]
   },
   {
-    "category": "Messages",
-    "title": "Disable Smart Quotes in Messages",
-    "description": "Disable smart quotes in Messages as it’s annoying for messages that contain code.",
-    "longDescription": "Prevents Messages from automatically converting straight quotes to curly quotes, which is useful when sending code snippets.",
-    "domain": "com.apple.messageshelper.MessageController",
-    "key": "SOInputLineSettings",
-    "parameterType": "dict",
-    "suggestedValue": null,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Messages",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "This key is a dictionary. To disable smart quotes: `defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add \"automaticQuoteSubstitutionEnabled\" -bool false`"
-    ]
-  },
-  {
-    "category": "Messages",
-    "title": "Disable Continuous Spell Checking in Messages",
-    "description": "Disable continuous spell checking in Messages.",
-    "longDescription": "Turns off the automatic spell checking feature within the Messages app as you type.",
-    "domain": "com.apple.messageshelper.MessageController",
-    "key": "SOInputLineSettings",
-    "parameterType": "dict",
-    "suggestedValue": null,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Messages",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "This key is a dictionary. To disable continuous spell checking: `defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add \"continuousSpellCheckingEnabled\" -bool false`"
-    ]
-  },
-  {
     "category": "Google Chrome",
     "title": "Disable Trackpad Back/Forward Swipe Navigation",
     "description": "Disable the swipe gesture for back/forward navigation on trackpads in Google Chrome.",
@@ -4624,7 +4602,9 @@
     "requiresRestart": "Google Chrome",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Apply similarly to `com.google.Chrome.canary` if using Canary."]
+    "notes": [
+      "Apply similarly to `com.google.Chrome.canary` if using Canary."
+    ]
   },
   {
     "category": "Google Chrome",
@@ -4648,7 +4628,9 @@
     "requiresRestart": "Google Chrome",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Apply similarly to `com.google.Chrome.canary` if using Canary."]
+    "notes": [
+      "Apply similarly to `com.google.Chrome.canary` if using Canary."
+    ]
   },
   {
     "category": "Google Chrome",
@@ -4672,7 +4654,9 @@
     "requiresRestart": "Google Chrome",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Apply similarly to `com.google.Chrome.canary` if using Canary."]
+    "notes": [
+      "Apply similarly to `com.google.Chrome.canary` if using Canary."
+    ]
   },
   {
     "category": "Google Chrome",
@@ -4696,7 +4680,9 @@
     "requiresRestart": "Google Chrome",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Apply similarly to `com.google.Chrome.canary` if using Canary."]
+    "notes": [
+      "Apply similarly to `com.google.Chrome.canary` if using Canary."
+    ]
   },
   {
     "category": "Transmission",
@@ -4720,7 +4706,9 @@
     "requiresRestart": "Transmission",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Pair with `IncompleteDownloadFolder` key to specify the path."]
+    "notes": [
+      "Pair with `IncompleteDownloadFolder` key to specify the path."
+    ]
   },
   {
     "category": "Transmission",
@@ -5051,7 +5039,9 @@
     "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Dashboard is deprecated/removed in macOS Catalina and later."]
+    "notes": [
+      "Dashboard is deprecated/removed in macOS Catalina and later."
+    ]
   },
   {
     "category": "Calendar",
@@ -5101,7 +5091,9 @@
     "requiresRestart": "Mail",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Also set `DisableSendAnimations` to true for send animations."]
+    "notes": [
+      "Also set `DisableSendAnimations` to true for send animations."
+    ]
   },
   {
     "category": "Mail",
@@ -5231,7 +5223,9 @@
     "requiresRestart": "App",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["May require logout or app restart to take full effect."]
+    "notes": [
+      "May require logout or app restart to take full effect."
+    ]
   },
   {
     "category": "General UI/UX",
@@ -5393,7 +5387,9 @@
     "requiresRestart": "Finder",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["The script also runs `xattr -d com.apple.FinderInfo ~/Library`."]
+    "notes": [
+      "The script also runs `xattr -d com.apple.FinderInfo ~/Library`."
+    ]
   },
   {
     "category": "Finder",
@@ -5586,7 +5582,9 @@
     "requiresRestart": "zoom.us.app",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Although the value is 'true'/'false', it's written as a string."]
+    "notes": [
+      "Although the value is 'true'/'false', it's written as a string."
+    ]
   },
   {
     "category": "zoom.us.app",
@@ -5610,7 +5608,9 @@
     "requiresRestart": "zoom.us.app",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Although the value is 'true'/'false', it's written as a string."]
+    "notes": [
+      "Although the value is 'true'/'false', it's written as a string."
+    ]
   },
   {
     "category": "zoom.us.app",
@@ -5634,7 +5634,9 @@
     "requiresRestart": "zoom.us.app",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Although the value is 'true'/'false', it's written as a string."]
+    "notes": [
+      "Although the value is 'true'/'false', it's written as a string."
+    ]
   },
   {
     "category": "zoom.us.app",
@@ -5658,7 +5660,9 @@
     "requiresRestart": "zoom.us.app",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Although the value is 'true'/'false', it's written as a string."]
+    "notes": [
+      "Although the value is 'true'/'false', it's written as a string."
+    ]
   },
   {
     "category": "zoom.us.app",
@@ -5682,7 +5686,9 @@
     "requiresRestart": "zoom.us.app",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Although the value is 'true'/'false', it's written as a string."]
+    "notes": [
+      "Although the value is 'true'/'false', it's written as a string."
+    ]
   },
   {
     "category": "zoom.us.app",
@@ -5706,7 +5712,9 @@
     "requiresRestart": "zoom.us.app",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Although the value is 'true'/'false', it's written as a string."]
+    "notes": [
+      "Although the value is 'true'/'false', it's written as a string."
+    ]
   },
   {
     "category": "GPGMail",
@@ -6149,48 +6157,6 @@
     "notes": []
   },
   {
-    "category": "Keyboard",
-    "title": "Key Repeat Rate",
-    "description": "Set the keyboard key repeat rate.",
-    "longDescription": "Adjusts how quickly a character repeats when a key is held down. Lower values mean faster repeat. Requires `ApplePressAndHoldEnabled` to be `false`. Requires logout.",
-    "domain": "NSGlobalDomain",
-    "key": "KeyRepeat",
-    "parameterType": "int",
-    "suggestedValue": 1,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Logout",
-    "requiresSudo": false,
-    "dependencies": [
-      {
-        "settingId": "NSGlobalDomain.ApplePressAndHoldEnabled"
-      }
-    ],
-    "notes": [
-      "A value of 1 is very fast. Default is typically 2 (30ms). This setting corresponds to System Settings -> Keyboard -> Key repeat rate."
-    ]
-  },
-  {
-    "category": "Keyboard",
-    "title": "Initial Key Repeat Delay",
-    "description": "Set the delay before key repeat begins.",
-    "longDescription": "Adjusts the delay before a character starts repeating when a key is held down. Lower values mean a shorter delay. Requires `ApplePressAndHoldEnabled` to be `false`. Requires logout.",
-    "domain": "NSGlobalDomain",
-    "key": "InitialKeyRepeat",
-    "parameterType": "int",
-    "suggestedValue": 10,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Logout",
-    "requiresSudo": false,
-    "dependencies": [
-      {
-        "settingId": "NSGlobalDomain.ApplePressAndHoldEnabled"
-      }
-    ],
-    "notes": [
-      "A value of 10 is very short (150ms). Default is typically 15 (225ms). This setting corresponds to System Settings -> Keyboard -> Delay until repeat."
-    ]
-  },
-  {
     "category": "Localization",
     "title": "Preferred Languages",
     "description": "Set the preferred order of languages for the system.",
@@ -6296,190 +6262,6 @@
   },
   {
     "category": "Finder",
-    "title": "Disable All Finder Animations",
-    "description": "Disable window animations and Get Info animations in Finder.",
-    "longDescription": "Turns off various animations within Finder, such as window opening/closing and Get Info panel transitions, which can make Finder feel more responsive. Requires Finder restart.",
-    "domain": "com.apple.finder",
-    "key": "DisableAllAnimations",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Disable animations."
-      },
-      {
-        "value": false,
-        "description": "Enable animations (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
-    "title": "Default New Window Target",
-    "description": "Set the default location for new Finder windows (e.g., Desktop, Home).",
-    "longDescription": "Configures what location new Finder windows open to by default. Requires Finder restart.",
-    "domain": "com.apple.finder",
-    "key": "NewWindowTarget",
-    "parameterType": "string",
-    "suggestedValue": "PfDe",
-    "acceptedParameterValues": [
-      {
-        "value": "PfDe",
-        "description": "Desktop"
-      },
-      {
-        "value": "PfHm",
-        "description": "Home folder"
-      },
-      {
-        "value": "PfLo",
-        "description": "Path specified by NewWindowTargetPath"
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "If using `PfLo`, `NewWindowTargetPath` must also be set, e.g., `file://${HOME}/Documents/`."
-    ]
-  },
-  {
-    "category": "Finder",
-    "title": "Default New Window Path",
-    "description": "Set the specific path for new Finder windows if NewWindowTarget is PfLo.",
-    "longDescription": "Specifies the exact file URL path for new Finder windows when `NewWindowTarget` is set to `PfLo`. Requires Finder restart.",
-    "domain": "com.apple.finder",
-    "key": "NewWindowTargetPath",
-    "parameterType": "string",
-    "suggestedValue": null,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [
-      {
-        "settingId": "com.apple.finder.NewWindowTarget"
-      }
-    ],
-    "notes": ["Example: `file://${HOME}/Desktop/`"]
-  },
-  {
-    "category": "Finder",
-    "title": "Show Status Bar",
-    "description": "Show the status bar at the bottom of Finder windows.",
-    "longDescription": "Displays the status bar in Finder windows, which shows information like the number of items in a folder and the available disk space. Requires Finder restart.",
-    "domain": "com.apple.finder",
-    "key": "ShowStatusBar",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Show status bar."
-      },
-      {
-        "value": false,
-        "description": "Hide status bar (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
-    "title": "Show Full POSIX Path in Title",
-    "description": "Display the full POSIX path as the Finder window title.",
-    "longDescription": "Makes the Finder window's title bar show the complete POSIX path of the current folder instead of just the folder's name. Requires Finder restart.",
-    "domain": "com.apple.finder",
-    "key": "_FXShowPosixPathInTitle",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Show full POSIX path."
-      },
-      {
-        "value": false,
-        "description": "Show folder name only (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "General UI/UX",
-    "title": "Enable Spring Loading for Directories",
-    "description": "Enable the spring loading feature for directories system-wide.",
-    "longDescription": "When dragging an item over a folder, this feature causes the folder to automatically open after a short delay, allowing navigation into subfolders during a drag operation. Requires Finder restart or logout.",
-    "domain": "NSGlobalDomain",
-    "key": "com.apple.springing.enabled",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable spring loading."
-      },
-      {
-        "value": false,
-        "description": "Disable spring loading (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "General UI/UX",
-    "title": "Spring Loading Delay",
-    "description": "Adjust the delay before a folder springs open during drag operations.",
-    "longDescription": "Sets the delay (in seconds) before a folder opens when an item is hovered over it during a drag. A value of 0 makes it nearly instant. Requires Finder restart or logout.",
-    "domain": "NSGlobalDomain",
-    "key": "com.apple.springing.delay",
-    "parameterType": "float",
-    "suggestedValue": 0,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
-    "title": "Disable .DS_Store File Creation on Network Volumes",
-    "description": "Prevent Finder from creating .DS_Store files on network shares.",
-    "longDescription": ".DS_Store files store custom folder attributes like icon positions and view settings. This option disables their creation on network volumes. Requires Finder restart.",
-    "domain": "com.apple.desktopservices",
-    "key": "DSDontWriteNetworkStores",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Do not write .DS_Store on network volumes."
-      },
-      {
-        "value": false,
-        "description": "Write .DS_Store on network volumes (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
     "title": "Disable .DS_Store File Creation on USB Volumes",
     "description": "Prevent Finder from creating .DS_Store files on USB drives.",
     "longDescription": "This option disables the creation of .DS_Store files on USB storage devices. Requires Finder restart.",
@@ -6498,30 +6280,6 @@
       }
     ],
     "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Disk Utility",
-    "title": "Skip Disk Image Verification",
-    "description": "Disable the verification process when mounting disk images.",
-    "longDescription": "Prevents macOS from verifying disk images (.dmg files) when they are mounted. This can speed up the mounting process but bypasses a potential integrity check. Requires app restart (Disk Utility or related services).",
-    "domain": "com.apple.frameworks.diskimages",
-    "key": "skip-verify",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Skip verification."
-      },
-      {
-        "value": false,
-        "description": "Perform verification (default)."
-      }
-    ],
-    "requiresRestart": "App",
     "requiresSudo": false,
     "dependencies": [],
     "notes": []
@@ -6575,141 +6333,6 @@
     "notes": []
   },
   {
-    "category": "Finder",
-    "title": "Auto-open Read-only Mounted Volumes",
-    "description": "Automatically open a new Finder window when a read-only volume is mounted.",
-    "longDescription": "When a read-only disk image or volume (like a CD/DVD or some .dmg files) is mounted, Finder will automatically open a window showing its contents. Requires Finder restart.",
-    "domain": "com.apple.frameworks.diskimages",
-    "key": "auto-open-ro-root",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Auto-open read-only volumes."
-      },
-      {
-        "value": false,
-        "description": "Do not auto-open read-only volumes (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
-    "title": "Auto-open Read-Write Mounted Volumes",
-    "description": "Automatically open a new Finder window when a read-write volume is mounted.",
-    "longDescription": "When a writable disk image or volume is mounted, Finder will automatically open a window showing its contents. Requires Finder restart.",
-    "domain": "com.apple.frameworks.diskimages",
-    "key": "auto-open-rw-root",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Auto-open read-write volumes."
-      },
-      {
-        "value": false,
-        "description": "Do not auto-open read-write volumes (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
-    "title": "Auto-open New Removable Disks",
-    "description": "Automatically open a new Finder window when a new removable disk is connected.",
-    "longDescription": "When a removable storage device (like a USB flash drive) is connected, Finder will automatically open a window displaying its content. Requires Finder restart.",
-    "domain": "com.apple.finder",
-    "key": "OpenWindowForNewRemovableDisk",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Auto-open removable disks."
-      },
-      {
-        "value": false,
-        "description": "Do not auto-open removable disks (default)."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
-    "title": "Disable Warning Before Emptying Trash",
-    "description": "Disable the confirmation warning before emptying the Trash.",
-    "longDescription": "Prevents Finder from showing a confirmation dialog asking 'Are you sure you want to permanently erase the items in the Trash?'. Requires Finder restart.",
-    "domain": "com.apple.finder",
-    "key": "WarnOnEmptyTrash",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Show warning (default)."
-      },
-      {
-        "value": false,
-        "description": "Do not show warning."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Finder",
-    "title": "Enable AirDrop Over All Interfaces",
-    "description": "Allow AirDrop to work over Ethernet and on potentially unsupported Macs.",
-    "longDescription": "Configures AirDrop to attempt to operate over all available network interfaces, not just Wi-Fi. This might enable AirDrop on Macs connected via Ethernet or on older, officially unsupported models. Requires Finder restart.",
-    "domain": "com.apple.NetworkBrowser",
-    "key": "BrowseAllInterfaces",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable AirDrop over all interfaces."
-      },
-      {
-        "value": false,
-        "description": "Default AirDrop behavior."
-      }
-    ],
-    "requiresRestart": "Finder",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Mission Control",
-    "title": "Mission Control Animation Duration",
-    "description": "Adjust the speed of Mission Control animations.",
-    "longDescription": "Sets the duration for animations within Mission Control (e.g., when showing all windows). A lower value (e.g., 0.1) makes animations faster. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "expose-animation-duration",
-    "parameterType": "float",
-    "suggestedValue": 0.1,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
     "category": "Mission Control",
     "title": "Disable Window Grouping by App in Mission Control (Old Exposé Behavior)",
     "description": "Don’t group windows by application in Mission Control; use the old Exposé behavior instead.",
@@ -6737,81 +6360,6 @@
   },
   {
     "category": "Dock",
-    "title": "Disable Dashboard",
-    "description": "Disable the Dashboard feature.",
-    "longDescription": "Turns off Dashboard, which hosts widgets. Dashboard is deprecated in modern macOS. Requires Dock restart.",
-    "domain": "com.apple.dashboard",
-    "key": "mcx-disabled",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Disable Dashboard."
-      },
-      {
-        "value": false,
-        "description": "Enable Dashboard (default on older systems)."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": ["Dashboard was removed in macOS Catalina (10.15)."]
-  },
-  {
-    "category": "Dock",
-    "title": "Don’t Show Dashboard as a Space",
-    "description": "Prevent Dashboard from appearing as a separate Space in Mission Control.",
-    "longDescription": "If Dashboard is enabled, this setting prevents it from occupying its own Space, making it accessible as an overlay instead. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "dashboard-in-overlay",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Dashboard as overlay (not a Space)."
-      },
-      {
-        "value": false,
-        "description": "Dashboard as a Space (default on older systems where Dashboard was a Space)."
-      }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": ["Relevant for macOS versions where Dashboard could be a Space."]
-  },
-  {
-    "category": "Dock",
-    "title": "Hot Corner Action (Top Left)",
-    "description": "Set the action for the top-left screen hot corner.",
-    "longDescription": "Configures the function triggered when the mouse cursor is moved to the top-left corner of the screen. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "wvous-tl-corner",
-    "parameterType": "int",
-    "suggestedValue": 2,
-    "acceptedParameterValues": [
-      { "value": 0, "description": "No Action" },
-      { "value": 2, "description": "Mission Control" },
-      { "value": 3, "description": "Application Windows" },
-      { "value": 4, "description": "Desktop" },
-      { "value": 5, "description": "Start Screen Saver" },
-      { "value": 6, "description": "Disable Screen Saver" },
-      { "value": 7, "description": "Dashboard" },
-      { "value": 10, "description": "Put Display to Sleep" },
-      { "value": 11, "description": "Launchpad" },
-      { "value": 12, "description": "Notification Center" },
-      { "value": 13, "description": "Lock Screen" }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": ["Use with `wvous-tl-modifier` for modifier keys (0 for none)."]
-  },
-  {
-    "category": "Dock",
     "title": "Hot Corner Modifier (Top Left)",
     "description": "Set the modifier key for the top-left screen hot corner.",
     "longDescription": "Defines a modifier key (Shift, Control, Option, Command) that must be held while moving the cursor to the top-left hot corner to trigger its action. Requires Dock restart.",
@@ -6820,43 +6368,31 @@
     "parameterType": "int",
     "suggestedValue": 0,
     "acceptedParameterValues": [
-      { "value": 0, "description": "No modifier" },
-      { "value": 131072, "description": "Shift" },
-      { "value": 262144, "description": "Control" },
-      { "value": 524288, "description": "Option" },
-      { "value": 1048576, "description": "Command" }
+      {
+        "value": 0,
+        "description": "No modifier"
+      },
+      {
+        "value": 131072,
+        "description": "Shift"
+      },
+      {
+        "value": 262144,
+        "description": "Control"
+      },
+      {
+        "value": 524288,
+        "description": "Option"
+      },
+      {
+        "value": 1048576,
+        "description": "Command"
+      }
     ],
     "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
     "notes": []
-  },
-  {
-    "category": "Dock",
-    "title": "Hot Corner Action (Top Right)",
-    "description": "Set the action for the top-right screen hot corner.",
-    "longDescription": "Configures the function triggered when the mouse cursor is moved to the top-right corner of the screen. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "wvous-tr-corner",
-    "parameterType": "int",
-    "suggestedValue": 4,
-    "acceptedParameterValues": [
-      { "value": 0, "description": "No Action" },
-      { "value": 2, "description": "Mission Control" },
-      { "value": 3, "description": "Application Windows" },
-      { "value": 4, "description": "Desktop" },
-      { "value": 5, "description": "Start Screen Saver" },
-      { "value": 6, "description": "Disable Screen Saver" },
-      { "value": 7, "description": "Dashboard" },
-      { "value": 10, "description": "Put Display to Sleep" },
-      { "value": 11, "description": "Launchpad" },
-      { "value": 12, "description": "Notification Center" },
-      { "value": 13, "description": "Lock Screen" }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": ["Use with `wvous-tr-modifier` for modifier keys."]
   },
   {
     "category": "Dock",
@@ -6868,43 +6404,31 @@
     "parameterType": "int",
     "suggestedValue": 0,
     "acceptedParameterValues": [
-      { "value": 0, "description": "No modifier" },
-      { "value": 131072, "description": "Shift" },
-      { "value": 262144, "description": "Control" },
-      { "value": 524288, "description": "Option" },
-      { "value": 1048576, "description": "Command" }
+      {
+        "value": 0,
+        "description": "No modifier"
+      },
+      {
+        "value": 131072,
+        "description": "Shift"
+      },
+      {
+        "value": 262144,
+        "description": "Control"
+      },
+      {
+        "value": 524288,
+        "description": "Option"
+      },
+      {
+        "value": 1048576,
+        "description": "Command"
+      }
     ],
     "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
     "notes": []
-  },
-  {
-    "category": "Dock",
-    "title": "Hot Corner Action (Bottom Left)",
-    "description": "Set the action for the bottom-left screen hot corner.",
-    "longDescription": "Configures the function triggered when the mouse cursor is moved to the bottom-left corner of the screen. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "wvous-bl-corner",
-    "parameterType": "int",
-    "suggestedValue": 5,
-    "acceptedParameterValues": [
-      { "value": 0, "description": "No Action" },
-      { "value": 2, "description": "Mission Control" },
-      { "value": 3, "description": "Application Windows" },
-      { "value": 4, "description": "Desktop" },
-      { "value": 5, "description": "Start Screen Saver" },
-      { "value": 6, "description": "Disable Screen Saver" },
-      { "value": 7, "description": "Dashboard" },
-      { "value": 10, "description": "Put Display to Sleep" },
-      { "value": 11, "description": "Launchpad" },
-      { "value": 12, "description": "Notification Center" },
-      { "value": 13, "description": "Lock Screen" }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": ["Use with `wvous-bl-modifier` for modifier keys."]
   },
   {
     "category": "Dock",
@@ -6916,43 +6440,31 @@
     "parameterType": "int",
     "suggestedValue": 0,
     "acceptedParameterValues": [
-      { "value": 0, "description": "No modifier" },
-      { "value": 131072, "description": "Shift" },
-      { "value": 262144, "description": "Control" },
-      { "value": 524288, "description": "Option" },
-      { "value": 1048576, "description": "Command" }
+      {
+        "value": 0,
+        "description": "No modifier"
+      },
+      {
+        "value": 131072,
+        "description": "Shift"
+      },
+      {
+        "value": 262144,
+        "description": "Control"
+      },
+      {
+        "value": 524288,
+        "description": "Option"
+      },
+      {
+        "value": 1048576,
+        "description": "Command"
+      }
     ],
     "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
     "notes": []
-  },
-  {
-    "category": "Dock",
-    "title": "Hot Corner Action (Bottom Right)",
-    "description": "Set the action for the bottom-right screen hot corner.",
-    "longDescription": "Configures the function triggered when the mouse cursor is moved to the bottom-right corner of the screen. Requires Dock restart.",
-    "domain": "com.apple.dock",
-    "key": "wvous-br-corner",
-    "parameterType": "int",
-    "suggestedValue": 10,
-    "acceptedParameterValues": [
-      { "value": 0, "description": "No Action" },
-      { "value": 2, "description": "Mission Control" },
-      { "value": 3, "description": "Application Windows" },
-      { "value": 4, "description": "Desktop" },
-      { "value": 5, "description": "Start Screen Saver" },
-      { "value": 6, "description": "Disable Screen Saver" },
-      { "value": 7, "description": "Dashboard" },
-      { "value": 10, "description": "Put Display to Sleep" },
-      { "value": 11, "description": "Launchpad" },
-      { "value": 12, "description": "Notification Center" },
-      { "value": 13, "description": "Lock Screen" }
-    ],
-    "requiresRestart": "Dock",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": ["Use with `wvous-br-modifier` for modifier keys."]
   },
   {
     "category": "Dock",
@@ -6964,92 +6476,31 @@
     "parameterType": "int",
     "suggestedValue": 0,
     "acceptedParameterValues": [
-      { "value": 0, "description": "No modifier" },
-      { "value": 131072, "description": "Shift" },
-      { "value": 262144, "description": "Control" },
-      { "value": 524288, "description": "Option" },
-      { "value": 1048576, "description": "Command" }
+      {
+        "value": 0,
+        "description": "No modifier"
+      },
+      {
+        "value": 131072,
+        "description": "Shift"
+      },
+      {
+        "value": 262144,
+        "description": "Control"
+      },
+      {
+        "value": 524288,
+        "description": "Option"
+      },
+      {
+        "value": 1048576,
+        "description": "Command"
+      }
     ],
     "requiresRestart": "Dock",
     "requiresSudo": false,
     "dependencies": [],
     "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable Universal Search (Suggestions to Apple)",
-    "description": "Prevent Safari from sending search queries to Apple for Universal Search suggestions.",
-    "longDescription": "Turns off Safari's Universal Search feature, which sends search queries to Apple to provide suggestions. This enhances privacy. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "UniversalSearchEnabled",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable Universal Search (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable Universal Search."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "Pair with `SuppressSearchSuggestions -bool true` for more comprehensive suggestion disabling."
-    ]
-  },
-  {
-    "category": "Safari",
-    "title": "Suppress Search Suggestions",
-    "description": "Prevent Safari from showing search suggestions as you type.",
-    "longDescription": "Disables the display of search engine suggestions in Safari's Smart Search Field as you type your query. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "SuppressSearchSuggestions",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Suppress search suggestions."
-      },
-      {
-        "value": false,
-        "description": "Show search suggestions (default)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Enable Tab Key to Highlight All Web Page Items",
-    "description": "Allow the Tab key to navigate through all interactive elements on a webpage.",
-    "longDescription": "Expands the Tab key's functionality in Safari to cycle focus through all links, buttons, and form fields on a webpage, rather than just form fields. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WebKitTabToLinksPreferenceKey",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Tab highlights all items."
-      },
-      {
-        "value": false,
-        "description": "Tab highlights text fields and lists only (default)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "For complete effect, also set `com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true`."
-    ]
   },
   {
     "category": "Safari",
@@ -7073,230 +6524,9 @@
     "requiresRestart": "Safari",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Use in conjunction with `WebKitTabToLinksPreferenceKey`."]
-  },
-  {
-    "category": "Safari",
-    "title": "Set Safari Home Page",
-    "description": "Define the webpage Safari loads as its home page.",
-    "longDescription": "Sets the URL that Safari will load when the home page is accessed (e.g., via the home button or new window/tab settings). `about:blank` is often used for faster loading. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "HomePage",
-    "parameterType": "string",
-    "suggestedValue": "about:blank",
-    "acceptedParameterValues": [],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable Auto-Opening of 'Safe' Downloads",
-    "description": "Prevent Safari from automatically opening files deemed 'safe' after download.",
-    "longDescription": "Safari has a feature to automatically open certain downloaded files (like images, PDFs, text files) it considers safe. This setting disables that behavior. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "AutoOpenSafeDownloads",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Auto-open safe files (default)."
-      },
-      {
-        "value": false,
-        "description": "Do not auto-open safe files."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Enable Backspace Key for Back Navigation",
-    "description": "Allow the Backspace key to navigate to the previous page in Safari.",
-    "longDescription": "Enables using the Backspace key (Delete key on some keyboards) to go back in Safari's browsing history. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable Backspace for back navigation."
-      },
-      {
-        "value": false,
-        "description": "Disable Backspace for back navigation (default)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Hide Safari Favorites Bar by Default",
-    "description": "Set Safari's Favorites Bar (bookmarks bar) to be hidden by default.",
-    "longDescription": "Configures Safari to not show the Favorites Bar by default when new windows are opened. It can still be toggled manually. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "ShowFavoritesBar",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Show Favorites Bar (default)."
-      },
-      {
-        "value": false,
-        "description": "Hide Favorites Bar."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Hide Sidebar in Safari Top Sites",
-    "description": "Prevent the sidebar from showing in Safari's Top Sites view.",
-    "longDescription": "When viewing Top Sites in Safari, this setting ensures the sidebar (which might display Reading List or Bookmarks) is hidden. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "ShowSidebarInTopSites",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Show sidebar in Top Sites (default)."
-      },
-      {
-        "value": false,
-        "description": "Hide sidebar in Top Sites."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable Safari Snapshot Update Policy",
-    "description": "Disable Safari's thumbnail cache for History and Top Sites.",
-    "longDescription": "This setting controls how Safari updates the thumbnail snapshots it uses for browsing history and Top Sites. Setting it to 2 disables these snapshot updates. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "DebugSnapshotsUpdatePolicy",
-    "parameterType": "int",
-    "suggestedValue": 2,
-    "acceptedParameterValues": [
-      {
-        "value": 2,
-        "description": "Disable snapshot updates."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Enable Safari Internal Debug Menu",
-    "description": "Show Safari's internal debug menu for advanced options.",
-    "longDescription": "Activates a hidden 'Debug' menu in Safari's menu bar, providing access to various internal settings, experimental features, and diagnostic tools. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "IncludeInternalDebugMenu",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable Debug menu."
-      },
-      {
-        "value": false,
-        "description": "Disable Debug menu (default)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Safari Find on Page: Default to 'Contains'",
-    "description": "Change Safari's 'Find on Page' (Cmd+F) to default to searching for text that 'Contains' the query, not just 'Starts With'.",
-    "longDescription": "Modifies the behavior of Safari's in-page search. When false, searches match any occurrence of the text. When true (default), it only matches text starting with the query. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "FindOnPageMatchesWordStartsOnly",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Find matches 'Starts With' (default)."
-      },
-      {
-        "value": false,
-        "description": "Find matches 'Contains'."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Clear Safari Proxies in Bookmarks Bar",
-    "description": "Remove any predefined proxy icons or special items from Safari’s bookmarks bar.",
-    "longDescription": "Sets the `ProxiesInBookmarksBar` key to an empty array `\"()\"`, effectively clearing out default or system-added special items from the Favorites Bar. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "ProxiesInBookmarksBar",
-    "parameterType": "string",
-    "suggestedValue": "()",
-    "acceptedParameterValues": [
-      {
-        "value": "()",
-        "description": "Empty array, removes default items."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Enable Safari Develop Menu",
-    "description": "Show the Develop menu in Safari's menu bar.",
-    "longDescription": "Activates the 'Develop' menu in Safari, which provides tools for web developers, including Web Inspector, responsive design mode, and cache management. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "IncludeDevelopMenu",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable Develop menu."
-      },
-      {
-        "value": false,
-        "description": "Disable Develop menu (default)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
+    "notes": [
+      "Use in conjunction with `WebKitTabToLinksPreferenceKey`."
+    ]
   },
   {
     "category": "Safari",
@@ -7372,200 +6602,6 @@
   },
   {
     "category": "Safari",
-    "title": "Enable Continuous Spell Checking in Safari",
-    "description": "Turn on Safari's continuous spell checking feature.",
-    "longDescription": "Safari will check spelling as you type in web forms and text areas if this is enabled. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WebContinuousSpellCheckingEnabled",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable continuous spell checking."
-      },
-      {
-        "value": false,
-        "description": "Disable continuous spell checking (default is often false)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable Automatic Spelling Correction in Safari",
-    "description": "Prevent Safari from automatically correcting spelling errors.",
-    "longDescription": "Turns off Safari's automatic correction of misspelled words while typing in web content. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WebAutomaticSpellingCorrectionEnabled",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable automatic spelling correction (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable automatic spelling correction."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable AutoFill from Address Book (Contacts)",
-    "description": "Stop Safari from automatically filling web forms using information from your Contacts.",
-    "longDescription": "Prevents Safari from using your contact card and other contacts in your Address Book to automatically fill in fields on web forms like name, address, email, etc. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "AutoFillFromAddressBook",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable AutoFill from Address Book (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable AutoFill from Address Book."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable AutoFill for Passwords",
-    "description": "Prevent Safari from automatically filling in saved passwords on websites.",
-    "longDescription": "Turns off Safari's feature that automatically populates username and password fields on websites with your saved Keychain credentials. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "AutoFillPasswords",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable AutoFill for passwords (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable AutoFill for passwords."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable AutoFill for Credit Card Data",
-    "description": "Stop Safari from automatically filling in saved credit card details on web forms.",
-    "longDescription": "Prevents Safari from automatically populating credit card number, expiry date, and CVC fields on payment forms with your saved payment information. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "AutoFillCreditCardData",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable AutoFill for credit cards (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable AutoFill for credit cards."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable AutoFill for Miscellaneous Forms",
-    "description": "Prevent Safari from automatically filling in other types of form data.",
-    "longDescription": "Disables Safari's AutoFill feature for general form fields that don't fall under contacts, passwords, or credit cards. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "AutoFillMiscellaneousForms",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable AutoFill for miscellaneous forms (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable AutoFill for miscellaneous forms."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Enable Fraudulent Website Warnings",
-    "description": "Ensure Safari warns about potentially fraudulent or phishing websites.",
-    "longDescription": "Activates Safari's built-in Safe Browsing feature, which checks websites against lists of known phishing and malware sites and displays a warning if a site is deemed unsafe. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WarnAboutFraudulentWebsites",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable fraudulent website warnings (default)."
-      },
-      {
-        "value": false,
-        "description": "Disable fraudulent website warnings."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable WebKit Plugins",
-    "description": "Disable support for legacy WebKit plugins in Safari.",
-    "longDescription": "Turns off support for older browser plugins like Flash Player or Silverlight within Safari. Most modern websites do not require these. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WebKitPluginsEnabled",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable WebKit plugins (default on older systems)."
-      },
-      {
-        "value": false,
-        "description": "Disable WebKit plugins."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "Also consider `com.apple.Safari.ContentPageGroupIdentifier.WebKit2PluginsEnabled -bool false`."
-    ]
-  },
-  {
-    "category": "Safari",
     "title": "Disable WebKit Plugins (ContentPageGroup)",
     "description": "Secondary setting to disable WebKit plugins for Safari's content page groups.",
     "longDescription": "This further ensures that legacy WebKit plugins are disabled within Safari's web content rendering processes. Requires Safari restart.",
@@ -7586,32 +6622,8 @@
     "requiresRestart": "Safari",
     "requiresSudo": false,
     "dependencies": [],
-    "notes": ["Use in conjunction with `WebKitPluginsEnabled`."]
-  },
-  {
-    "category": "Safari",
-    "title": "Disable Java Support in Safari",
-    "description": "Turn off Java plugin support in Safari.",
-    "longDescription": "Disables the Java plugin, preventing Java applets from running in Safari. Java in browsers is largely obsolete and a security risk. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WebKitJavaEnabled",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Enable Java (default on very old systems)."
-      },
-      {
-        "value": false,
-        "description": "Disable Java."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
     "notes": [
-      "Also consider `com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false` and `com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles -bool false`."
+      "Use in conjunction with `WebKitPluginsEnabled`."
     ]
   },
   {
@@ -7664,32 +6676,6 @@
   },
   {
     "category": "Safari",
-    "title": "Block JavaScript Pop-up Windows",
-    "description": "Prevent websites from opening pop-up windows automatically via JavaScript.",
-    "longDescription": "Controls Safari's pop-up blocker. When false, JavaScript-initiated pop-up windows are generally blocked. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WebKitJavaScriptCanOpenWindowsAutomatically",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Allow JavaScript to open windows automatically."
-      },
-      {
-        "value": false,
-        "description": "Block JavaScript from opening windows automatically (default behavior is often to block unless user allows)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "Also consider `com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false`."
-    ]
-  },
-  {
-    "category": "Safari",
     "title": "Block JavaScript Pop-up Windows (ContentPageGroup)",
     "description": "Secondary setting to block JavaScript pop-ups for Safari's content page groups.",
     "longDescription": "Further ensures that JavaScript-initiated pop-up windows are blocked within Safari's web content rendering processes. Requires Safari restart.",
@@ -7711,32 +6697,6 @@
     "requiresSudo": false,
     "dependencies": [],
     "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Disable Inline Media Playback (Auto-Play)",
-    "description": "Prevent videos from playing automatically when embedded inline on a webpage.",
-    "longDescription": "Controls whether videos embedded directly within a webpage (inline) can start playing automatically. Setting to false aims to prevent this. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "WebKitMediaPlaybackAllowsInline",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Allow inline media playback (default)."
-      },
-      {
-        "value": false,
-        "description": "Disallow inline media playback (prevents auto-play)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "Behavior can be complex due to website-specific permissions and other related settings like `com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback`."
-    ]
   },
   {
     "category": "Safari Technology Preview",
@@ -7811,54 +6771,6 @@
     "notes": []
   },
   {
-    "category": "Safari",
-    "title": "Enable 'Do Not Track' HTTP Header",
-    "description": "Instruct Safari to send the 'Do Not Track' HTTP header with web requests.",
-    "longDescription": "When enabled, Safari sends a DNT:1 header with HTTP requests, signaling to websites the user's preference against tracking. Website compliance is voluntary. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "SendDoNotTrackHTTPHeader",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Send 'Do Not Track' header."
-      },
-      {
-        "value": false,
-        "description": "Do not send 'Do Not Track' header (default)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Safari",
-    "title": "Automatically Update Safari Extensions",
-    "description": "Enable automatic updates for installed Safari extensions.",
-    "longDescription": "Configures Safari to periodically check for and automatically install updates for any installed extensions. Requires Safari restart.",
-    "domain": "com.apple.Safari",
-    "key": "InstallExtensionUpdatesAutomatically",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Update extensions automatically."
-      },
-      {
-        "value": false,
-        "description": "Do not update extensions automatically (default)."
-      }
-    ],
-    "requiresRestart": "Safari",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
     "category": "Mail",
     "title": "Disable Mail Send Animations",
     "description": "Turn off the animation when sending an email in Mail.app.",
@@ -7875,112 +6787,6 @@
       {
         "value": false,
         "description": "Enable send animations (default)."
-      }
-    ],
-    "requiresRestart": "Mail",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Mail",
-    "title": "Copy Email Addresses as Address Only",
-    "description": "When copying email addresses from Mail, copy only the address (e.g., `foo@example.com`) instead of the name and address (e.g., `Foo Bar <foo@example.com>`).",
-    "longDescription": "Changes the default behavior of Mail.app when copying email addresses. When false, only the email address itself is copied to the clipboard. Requires Mail restart.",
-    "domain": "com.apple.mail",
-    "key": "AddressesIncludeNameOnPasteboard",
-    "parameterType": "bool",
-    "suggestedValue": false,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Copy name and address (default)."
-      },
-      {
-        "value": false,
-        "description": "Copy address only."
-      }
-    ],
-    "requiresRestart": "Mail",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Mail",
-    "title": "Add Keyboard Shortcut for Send (Cmd+Enter)",
-    "description": "Set Command-Enter as a keyboard shortcut to send an email in Mail.app.",
-    "longDescription": "Customizes Mail.app's keyboard shortcuts to allow sending the current email by pressing Command-Enter. Requires Mail restart.",
-    "domain": "com.apple.mail",
-    "key": "NSUserKeyEquivalents",
-    "parameterType": "dict",
-    "suggestedValue": null,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Mail",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "This is set by adding to a dictionary: `defaults write com.apple.mail NSUserKeyEquivalents -dict-add \"Send\" \"@\\U21a9\"` (where `@` is Command and `\\U21a9` is Enter)."
-    ]
-  },
-  {
-    "category": "Mail",
-    "title": "Configure Drafts Viewer Attributes",
-    "description": "Set display mode, sort direction, and sort order for the Drafts folder in Mail.app.",
-    "longDescription": "Customizes how emails are displayed in the Drafts folder. Example sets threaded mode, sort by received date, oldest at top. Requires Mail restart.",
-    "domain": "com.apple.mail",
-    "key": "DraftsViewerAttributes",
-    "parameterType": "dict",
-    "suggestedValue": null,
-    "acceptedParameterValues": [],
-    "requiresRestart": "Mail",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": [
-      "This is a dictionary key. Example for threaded, sort by date (oldest top): `defaults write com.apple.mail DraftsViewerAttributes -dict-add \"DisplayInThreadedMode\" -string \"yes\" -dict-add \"SortedDescending\" -string \"yes\" -dict-add \"SortOrder\" -string \"received-date\"`."
-    ]
-  },
-  {
-    "category": "Mail",
-    "title": "Disable Inline Attachment Viewing in Mail",
-    "description": "Show icons for attachments instead of displaying them inline in Mail.app.",
-    "longDescription": "Prevents Mail.app from rendering images and other attachments directly within the email body. Instead, attachments will be shown as icons. Requires Mail restart.",
-    "domain": "com.apple.mail",
-    "key": "DisableInlineAttachmentViewing",
-    "parameterType": "bool",
-    "suggestedValue": true,
-    "acceptedParameterValues": [
-      {
-        "value": true,
-        "description": "Disable inline attachments (show icons)."
-      },
-      {
-        "value": false,
-        "description": "Enable inline attachments (default)."
-      }
-    ],
-    "requiresRestart": "Mail",
-    "requiresSudo": false,
-    "dependencies": [],
-    "notes": []
-  },
-  {
-    "category": "Mail",
-    "title": "Disable Spell Checking in Mail",
-    "description": "Turn off automatic spell checking while composing emails in Mail.app.",
-    "longDescription": "Disables Mail.app's built-in spell checking feature that operates as you type. Requires Mail restart.",
-    "domain": "com.apple.mail",
-    "key": "SpellCheckingBehavior",
-    "parameterType": "string",
-    "suggestedValue": "NoSpellCheckingEnabled",
-    "acceptedParameterValues": [
-      {
-        "value": "NoSpellCheckingEnabled",
-        "description": "Disable spell checking."
-      },
-      {
-        "value": "AutomaticSpellCheckingEnabled",
-        "description": "Enable automatic spell checking (default)."
       }
     ],
     "requiresRestart": "Mail",
@@ -8532,8 +7338,14 @@
     "parameterType": "int",
     "suggestedValue": 2,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Off" },
-      { "value": 2, "description": "Typically Launchpad or Show Desktop" }
+      {
+        "value": 0,
+        "description": "Off"
+      },
+      {
+        "value": 2,
+        "description": "Typically Launchpad or Show Desktop"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8550,9 +7362,18 @@
     "parameterType": "int",
     "suggestedValue": 2,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Off" },
-      { "value": 1, "description": "Swipe between pages" },
-      { "value": 2, "description": "Swipe between full-screen apps" }
+      {
+        "value": 0,
+        "description": "Off"
+      },
+      {
+        "value": 1,
+        "description": "Swipe between pages"
+      },
+      {
+        "value": 2,
+        "description": "Swipe between full-screen apps"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8569,8 +7390,14 @@
     "parameterType": "int",
     "suggestedValue": 2,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Off" },
-      { "value": 2, "description": "Typically Launchpad or Mission Control" }
+      {
+        "value": 0,
+        "description": "Off"
+      },
+      {
+        "value": 2,
+        "description": "Typically Launchpad or Mission Control"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8587,8 +7414,14 @@
     "parameterType": "int",
     "suggestedValue": 2,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Off" },
-      { "value": 2, "description": "Mission Control / App Exposé" }
+      {
+        "value": 0,
+        "description": "Off"
+      },
+      {
+        "value": 2,
+        "description": "Mission Control / App Exposé"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8605,8 +7438,14 @@
     "parameterType": "int",
     "suggestedValue": 1,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Disable hand resting detection" },
-      { "value": 1, "description": "Enable hand resting detection" }
+      {
+        "value": 0,
+        "description": "Disable hand resting detection"
+      },
+      {
+        "value": 1,
+        "description": "Enable hand resting detection"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8623,8 +7462,14 @@
     "parameterType": "int",
     "suggestedValue": 1,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Disable horizontal scroll" },
-      { "value": 1, "description": "Enable horizontal scroll" }
+      {
+        "value": 0,
+        "description": "Disable horizontal scroll"
+      },
+      {
+        "value": 1,
+        "description": "Enable horizontal scroll"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8641,8 +7486,14 @@
     "parameterType": "int",
     "suggestedValue": 1,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Disable momentum scroll" },
-      { "value": 1, "description": "Enable momentum scroll" }
+      {
+        "value": 0,
+        "description": "Disable momentum scroll"
+      },
+      {
+        "value": 1,
+        "description": "Enable momentum scroll"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8659,8 +7510,14 @@
     "parameterType": "int",
     "suggestedValue": 1,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Disable pinch gesture" },
-      { "value": 1, "description": "Enable pinch gesture" }
+      {
+        "value": 0,
+        "description": "Disable pinch gesture"
+      },
+      {
+        "value": 1,
+        "description": "Enable pinch gesture"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,
@@ -8677,8 +7534,14 @@
     "parameterType": "int",
     "suggestedValue": 1,
     "acceptedParameterValues": [
-      { "value": 0, "description": "Disable rotate gesture" },
-      { "value": 1, "description": "Enable rotate gesture" }
+      {
+        "value": 0,
+        "description": "Disable rotate gesture"
+      },
+      {
+        "value": 1,
+        "description": "Enable rotate gesture"
+      }
     ],
     "requiresRestart": "Logout",
     "requiresSudo": false,

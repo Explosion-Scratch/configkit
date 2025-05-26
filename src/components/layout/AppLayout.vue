@@ -108,7 +108,7 @@ onUnmounted(() => {
 @import "../../style.css";
 
 .app-layout {
-    @apply flex fixed lg:inset-20 lg:rounded-md overflow-hidden w-full lg:w-[unset];
+    @apply flex fixed lg:inset-20 lg:rounded-lg lg:shadow-lg overflow-hidden w-full lg:w-[unset];
 }
 
 /* Mobile menu animation */
